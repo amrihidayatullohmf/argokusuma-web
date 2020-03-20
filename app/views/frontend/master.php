@@ -13,6 +13,7 @@
 
   <link href="<?php echo base_url(); ?>assets/css/reset.css" rel="stylesheet" type="text/css" media="all">
   <link href="<?php echo base_url(); ?>assets/libs/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+  <link href="<?php echo base_url(); ?>assets/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
 
   <?php if(ENVIRONMENT == 'production'): ?>
   <link href="<?php echo base_url(); ?>assets/css/fonts.min.css" rel="stylesheet" type="text/css" media="all">

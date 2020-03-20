@@ -59,6 +59,7 @@ $route['contact-us'] = 'home/contactus';
 $route['what-we-do'] = 'service/index';
 $route['what-we-do/(:any)'] = 'service/detail/$1';
 $route['portfolio/(:any)'] = 'portfolio/detail/$1';
+$route['blog/(:any)'] = 'blog/detail/$1';
 
 
 
