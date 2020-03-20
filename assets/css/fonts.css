@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'Qartella-Bold';
+    src: url('../fonts/qartella/Qartella-Bold.eot');
+    src: url('../fonts/qartella/Qartella-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/qartella/Qartella-Bold.woff2') format('woff2'),
+        url('../fonts/qartella/Qartella-Bold.woff') format('woff'),
+        url('../fonts/qartella/Qartella-Bold.ttf') format('truetype'),
+        url('../fonts/qartella/Qartella-Bold.svg#../fonts/qartella/Qartella-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Qartella-BoldItalic';
+    src: url('../fonts/qartella/Qartella-BoldItalic.eot');
+    src: url('../fonts/qartella/Qartella-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/qartella/Qartella-BoldItalic.woff2') format('woff2'),
+        url('../fonts/qartella/Qartella-BoldItalic.woff') format('woff'),
+        url('../fonts/qartella/Qartella-BoldItalic.ttf') format('truetype'),
+        url('../fonts/qartella/Qartella-BoldItalic.svg#../fonts/qartella/Qartella-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Qartella-Italic';
+    src: url('../fonts/qartella/Qartella-Italic.eot');
+    src: url('../fonts/qartella/Qartella-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/qartella/Qartella-Italic.woff2') format('woff2'),
+        url('../fonts/qartella/Qartella-Italic.woff') format('woff'),
+        url('../fonts/qartella/Qartella-Italic.ttf') format('truetype'),
+        url('../fonts/qartella/Qartella-Italic.svg#../fonts/qartella/Qartella-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Qartella-Light';
+    src: url('../fonts/qartella/Qartella-Light.eot');
+    src: url('../fonts/qartella/Qartella-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/qartella/Qartella-Light.woff2') format('woff2'),
+        url('../fonts/qartella/Qartella-Light.woff') format('woff'),
+        url('../fonts/qartella/Qartella-Light.ttf') format('truetype'),
+        url('../fonts/qartella/Qartella-Light.svg#../fonts/qartella/Qartella-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Qartella-Regular';
+    src: url('../fonts/qartella/Qartella-Regular.eot');
+    src: url('../fonts/qartella/Qartella-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/qartella/Qartella-Regular.woff2') format('woff2'),
+        url('../fonts/qartella/Qartella-Regular.woff') format('woff'),
+        url('../fonts/qartella/Qartella-Regular.ttf') format('truetype'),
+        url('../fonts/qartella/Qartella-Regular.svg#../fonts/qartella/Qartella-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Qartella-HeavyItalic';
+    src: url('../fonts/qartella/Qartella-HeavyItalic.eot');
+    src: url('../fonts/qartella/Qartella-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/qartella/Qartella-HeavyItalic.woff2') format('woff2'),
+        url('../fonts/qartella/Qartella-HeavyItalic.woff') format('woff'),
+        url('../fonts/qartella/Qartella-HeavyItalic.ttf') format('truetype'),
+        url('../fonts/qartella/Qartella-HeavyItalic.svg#../fonts/qartella/Qartella-HeavyItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Qartella-LightItalic';
+    src: url('../fonts/qartella/Qartella-LightItalic.eot');
+    src: url('../fonts/qartella/Qartella-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/qartella/Qartella-LightItalic.woff2') format('woff2'),
+        url('../fonts/qartella/Qartella-LightItalic.woff') format('woff'),
+        url('../fonts/qartella/Qartella-LightItalic.ttf') format('truetype'),
+        url('../fonts/qartella/Qartella-LightItalic.svg#../fonts/qartella/Qartella-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Qartella-Heavy';
+    src: url('../fonts/qartella/Qartella-Heavy.eot');
+    src: url('../fonts/qartella/Qartella-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/qartella/Qartella-Heavy.woff2') format('woff2'),
+        url('../fonts/qartella/Qartella-Heavy.woff') format('woff'),
+        url('../fonts/qartella/Qartella-Heavy.ttf') format('truetype'),
+        url('../fonts/qartella/Qartella-Heavy.svg#../fonts/qartella/Qartella-Heavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Qartella-ExtraBold';
+    src: url('../fonts/qartella/Qartella-ExtraBold.eot');
+    src: url('../fonts/qartella/Qartella-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/qartella/Qartella-ExtraBold.woff2') format('woff2'),
+        url('../fonts/qartella/Qartella-ExtraBold.woff') format('woff'),
+        url('../fonts/qartella/Qartella-ExtraBold.ttf') format('truetype'),
+        url('../fonts/qartella/Qartella-ExtraBold.svg#../fonts/qartella/Qartella-ExtraBold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Qartella-ExtraBoldItalic';
+    src: url('../fonts/qartella/Qartella-ExtraBoldItalic.eot');
+    src: url('../fonts/qartella/Qartella-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/qartella/Qartella-ExtraBoldItalic.woff2') format('woff2'),
+        url('../fonts/qartella/Qartella-ExtraBoldItalic.woff') format('woff'),
+        url('../fonts/qartella/Qartella-ExtraBoldItalic.ttf') format('truetype'),
+        url('../fonts/qartella/Qartella-ExtraBoldItalic.svg#../fonts/qartella/Qartella-ExtraBoldItalic') format('svg');
+    font-weight: 800;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'Origin-Bold';
+    src: url('../fonts/origin/Origin-Bold.eot');
+    src: url('../fonts/origin/Origin-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/origin/Qartella-Bold.woff') format('woff'),
+        url('../fonts/origin/Origin-Bold.ttf') format('truetype'),
+        url('../fonts/origin/Origin-Bold.svg#../fonts/qartella/Origin-Bold') format('svg');
+}
+
+@font-face {
+    font-family: 'Origin-Heavy';
+    src: url('../fonts/origin/Origin-Heavy.eot');
+    src: url('../fonts/origin/Origin-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/origin/Qartella-Heavy.woff') format('woff'),
+        url('../fonts/origin/Origin-Heavy.ttf') format('truetype'),
+        url('../fonts/origin/Origin-Heavy.svg#../fonts/qartella/Origin-Heavy') format('svg');
+}
+
+@font-face {
+    font-family: 'Origin-Light';
+    src: url('../fonts/origin/Origin-Light.eot');
+    src: url('../fonts/origin/Origin-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/origin/Qartella-Light.woff') format('woff'),
+        url('../fonts/origin/Origin-Light.ttf') format('truetype'),
+        url('../fonts/origin/Origin-Light.svg#../fonts/qartella/Origin-Light') format('svg');
+}
+
+@font-face {
+    font-family: 'Origin-Regular';
+    src: url('../fonts/origin/Origin-Regular.eot');
+    src: url('../fonts/origin/Origin-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/origin/Qartella-Regular.woff') format('woff'),
+        url('../fonts/origin/Origin-Regular.ttf') format('truetype'),
+        url('../fonts/origin/Origin-Regular.svg#../fonts/qartella/Origin-Regular') format('svg');
+}
+
+@font-face {
+    font-family: 'SFUIDisplay-Light';
+    src: url('../fonts/SFUDisplay/SFUIDisplay-Light.otf') format('otf'),
+        url('../fonts/SFUDisplay/QaSFUIDisplay-Light.woff') format('woff'),
+        url('../fonts/SFUDisplay/SFUIDisplay-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SFUIDisplay-Heavy';
+    src: url('../fonts/SFUDisplay/SFUIDisplay-Heavy.otf') format('otf'),
+        url('../fonts/SFUDisplay/QaSFUIDisplay-Heavy.woff') format('woff'),
+        url('../fonts/SFUDisplay/SFUIDisplay-Heavy.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SFUIDisplay-Medium';
+    src: url('../fonts/SFUDisplay/SFUIDisplay-Medium.otf') format('otf'),
+        url('../fonts/SFUDisplay/QaSFUIDisplay-Medium.woff') format('woff'),
+        url('../fonts/SFUDisplay/SFUIDisplay-Medium.ttf') format('truetype');
+}

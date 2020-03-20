@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<link rel="stylesheet" type="text/css" href="assets/libs/lightslider/css/lightslider.min.css">
+</head>
+<body>
+
+	<ul id="homeslider">
+	  <li data-thumb="medias/sliders/bannerdummy.png" data-src="medias/sliders/bannerdummy.png">
+	      <img src="medias/sliders/bannerdummy.png">
+	  </li>
+	  <li data-thumb="medias/sliders/bannerdummy.png" data-src="medias/sliders/bannerdummy.png">
+	      <img src="medias/sliders/bannerdummy.png">
+	  </li>
+	  <li data-thumb="medias/sliders/bannerdummy.png" data-src="medias/sliders/bannerdummy.png">
+	      <img src="medias/sliders/bannerdummy.png">
+	  </li>
+	</ul>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/libs/lightslider/js/lightslider.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+				$("#homeslider").lightSlider({
+					item:1
+				});
+			});
+	</script>
+</body>
+</html>

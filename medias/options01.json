@@ -1,0 +1,483 @@
+{
+	"general": [{
+			"option_key": "main-logo",
+			"option_value": "Main-Logo.png",
+			"field_type": "text",
+			"caption": "Main Logo",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "meta-title",
+			"option_value": "Argo Kusuma Group",
+			"field_type": "text",
+			"caption": "Meta Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "meta-description",
+			"option_value": "Digital Innovation Company that create progress",
+			"field_type": "longtext",
+			"caption": "Meta Description",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "meta-keywords",
+			"option_value": "",
+			"field_type": "longtext",
+			"caption": "Meta Keywords",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "meta-favicon",
+			"option_value": "Meta-Icon.png",
+			"field_type": "image",
+			"caption": "Meta Favicon",
+			"desclimer": "",
+			"editable": "1"
+		}],
+	"menubar": [{
+			"option_key": "home-menu-visibility",
+			"option_value": "1",
+			"field_type": "tickbox",
+			"caption": "Home Menu Visibility",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "home-menu-text",
+			"option_value": "Home",
+			"field_type": "text",
+			"caption": "Home Menu Text",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "about-menu-visibility",
+			"option_value": "1",
+			"field_type": "tickbox",
+			"caption": "About Menu Visibility",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "about-menu-text",
+			"option_value": "About Us",
+			"field_type": "text",
+			"caption": "About Menu Text",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-menu-visibility",
+			"option_value": "1",
+			"field_type": "tickbox",
+			"caption": "Service Menu Visibility",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-menu-text",
+			"option_value": "What We Do",
+			"field_type": "text",
+			"caption": "Service Menu Text",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "portfolio-menu-visibility",
+			"option_value": "1",
+			"field_type": "tickbox",
+			"caption": "Portfolio Menu Visibility",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "portfolio-menu-text",
+			"option_value": "Portfolio",
+			"field_type": "text",
+			"caption": "Portfolio Menu Text",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "blog-menu-visibility",
+			"option_value": "1",
+			"field_type": "tickbox",
+			"caption": "Blog Menu Visibility",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "blog-menu-text",
+			"option_value": "Blog",
+			"field_type": "text",
+			"caption": "Blog Menu Text",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "contact-menu-visibility",
+			"option_value": "1",
+			"field_type": "tickbox",
+			"caption": "Contact Menu Visibility",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "contact-menu-text",
+			"option_value": "Contact Us",
+			"field_type": "text",
+			"caption": "Contact Menu Text",
+			"desclimer": "",
+			"editable": "1"
+		}],
+	"footer": [{
+			"option_key": "contact-section-heading",
+			"option_value": "Contact With Us",
+			"field_type": "text",
+			"caption": "Contact Section Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "quicklink-section-heading",
+			"option_value": "Quick Links",
+			"field_type": "text",
+			"caption": "Quick Link Section Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "latest-section-heading",
+			"option_value": "Latest News",
+			"field_type": "text",
+			"caption": "Contact Section Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "social-section-heading",
+			"option_value": "Follow Us on Social",
+			"field_type": "text",
+			"caption": "Social Section Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "copyright-text",
+			"option_value": "&copy; {{year}} Argo Kusuma Group. All Right Reserved",
+			"field_type": "longtext",
+			"caption": "Copyright Text",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "instagram-label",
+			"option_value": "Instagram",
+			"field_type": "text",
+			"caption": "Instagram Label",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "youtube-label",
+			"option_value": "Youtube",
+			"field_type": "text",
+			"caption": "Youtube Label",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "twitter-label",
+			"option_value": "Twitter",
+			"field_type": "text",
+			"caption": "Twitter Label",
+			"desclimer": "",
+			"editable": "1"
+		}],
+	"contact": [{
+			"option_key": "email-address",
+			"option_value": "argokusumagroup@gmail.com",
+			"field_type": "text",
+			"caption": "E-Mail Address",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "phone-number",
+			"option_value": "+62987-193-3476",
+			"field_type": "text",
+			"caption": "Phone Number",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "office-address",
+			"option_value": "Bintaro, Tanggerang Selatan, Indonesia",
+			"field_type": "text",
+			"caption": "Office Address",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "instagram-url",
+			"option_value": "#",
+			"field_type": "text",
+			"caption": "Instagram URL",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "youtube-url",
+			"option_value": "#",
+			"field_type": "text",
+			"caption": "Youtube URL",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "twitter-url",
+			"option_value": "#",
+			"field_type": "text",
+			"caption": "Twitter URL",
+			"desclimer": "",
+			"editable": "1"
+		}],
+	"homepage": [{
+			"option_key": "service-head-1",
+			"option_value": "Digital Product",
+			"field_type": "text",
+			"caption": "Service Title 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-body-1",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit. ",
+			"field_type": "longtext",
+			"caption": "Service Body 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-icon-1",
+			"option_value": "Icon1.png",
+			"field_type": "image",
+			"caption": "Service Icon 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-head-2",
+			"option_value": "Online Marketing",
+			"field_type": "text",
+			"caption": "Service Title 2",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-body-2",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit. ",
+			"field_type": "longtext",
+			"caption": "Service Body 2",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-icon-2",
+			"option_value": "Icon2.png",
+			"field_type": "image",
+			"caption": "Service Icon 2",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-head-3",
+			"option_value": "Product Design",
+			"field_type": "text",
+			"caption": "Service Title 3",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-body-3",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit. ",
+			"field_type": "longtext",
+			"caption": "Service Body 3",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-icon-3",
+			"option_value": "Icon3.png",
+			"field_type": "image",
+			"caption": "Service Icon 3",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "about-headline-sub-1",
+			"option_value": "What We Do",
+			"field_type": "text",
+			"caption": "Sub Headline About 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "about-headline-heading-1",
+			"option_value": "Highest Creative Standard",
+			"field_type": "longtext",
+			"caption": "Headline About 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "about-headline-body-1",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit.",
+			"field_type": "text",
+			"caption": "Sub Headline Body About 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "about-headline-sub-2",
+			"option_value": "What We Do",
+			"field_type": "text",
+			"caption": "Sub Headline About 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "about-headline-heading-2",
+			"option_value": "Question, Listen, Learn and Innovate.",
+			"field_type": "longtext",
+			"caption": "Headline About 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "about-headline-body-2",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit.",
+			"field_type": "text",
+			"caption": "Sub Headline Body About 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "stat-icon-1",
+			"option_value": "projecticon.png",
+			"field_type": "image",
+			"caption": "Statistic Icon 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "stat-value-1",
+			"option_value": 100,
+			"field_type": "text",
+			"caption": "Statistic Value 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "stat-label-1",
+			"option_value": "Completed Project",
+			"field_type": "text",
+			"caption": "Statistic Label 1",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "stat-icon-2",
+			"option_value": "clienticon.png",
+			"field_type": "image",
+			"caption": "Statistic Icon 2",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "stat-value-2",
+			"option_value": 100,
+			"field_type": "text",
+			"caption": "Statistic Value 2",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "stat-label-2",
+			"option_value": "Varied Happy Client",
+			"field_type": "text",
+			"caption": "Statistic Label 2",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "stat-icon-3",
+			"option_value": "awardicon.png",
+			"field_type": "image",
+			"caption": "Statistic Icon 3",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "stat-value-3",
+			"option_value": 100,
+			"field_type": "text",
+			"caption": "Statistic Value 3",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "stat-label-3",
+			"option_value": "Time Award Winner",
+			"field_type": "text",
+			"caption": "Statistic Label 3",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "showcase-sub-heading",
+			"option_value": "Our Projects",
+			"field_type": "text",
+			"caption": "Showcase Sub Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "showcase-sub-heading",
+			"option_value": "Our Projects",
+			"field_type": "text",
+			"caption": "Showcase Sub Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "showcase-heading",
+			"option_value": "Showcase",
+			"field_type": "text",
+			"caption": "Showcase Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "showcase-body",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus ",
+			"field_type": "text",
+			"caption": "Showcase Body",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "testimonials-sub-heading",
+			"option_value": "Testimonials",
+			"field_type": "text",
+			"caption": "Testimonial Sub Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "testimonials-heading",
+			"option_value": "Customer Reviews",
+			"field_type": "text",
+			"caption": "Testimonials Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "teams-heading",
+			"option_value": "Our Team",
+			"field_type": "text",
+			"caption": "Teams Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "blog-sub-heading",
+			"option_value": "Dont Miss Our Latest news",
+			"field_type": "text",
+			"caption": "Blog Sub Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "blog-heading",
+			"option_value": "From The Blog",
+			"field_type": "text",
+			"caption": "Blog Sub Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "blog-body",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus ",
+			"field_type": "text",
+			"caption": "Blog Body",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "newsletter-heading",
+			"option_value": "Join Our Newsletter",
+			"field_type": "text",
+			"caption": "Newsletter Heading",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "newsletter-body-before",
+			"option_value": "Sign up to our newsletter and get our latest news and update",
+			"field_type": "text",
+			"caption": "Newsletter body before",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "newsletter-body-after",
+			"option_value": "Your personal detail is safa with us",
+			"field_type": "text",
+			"caption": "Newsletter body after",
+			"desclimer": "",
+			"editable": "1"
+		}]
+}
