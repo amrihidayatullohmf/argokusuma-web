@@ -2,7 +2,8 @@
 	<ul id="homeslider">
 	  <?php foreach ($slider as $key => $value): ?>
 	  <li>
-	      <img src="<?php echo site_url('medias/sliders/'.$value['desktop_image']); ?>">
+	      <img src="<?php echo site_url('medias/sliders/'.$value['desktop_image']); ?>" class="desktop">
+	      <img src="<?php echo site_url('medias/sliders/'.$value['mobile_image']); ?>" class="mobile mobile-main-slider">
 	  	  <div class="text-area container text-shadow ">
 	  	  	<div class="row">
 		  	  	<div class="col-12">
@@ -65,7 +66,10 @@
 			</div>
 		</div>
 		<div class="col-11">
-			<div class="embed-responsive embed-responsive-21by9">
+			<div class="embed-responsive embed-responsive-21by9 desktop">
+			  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/35XxJMhqP60?rel=0" allowfullscreen></iframe>
+			</div>
+			<div class="embed-responsive embed-responsive-16by9 mobile">
 			  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/35XxJMhqP60?rel=0" allowfullscreen></iframe>
 			</div>
 		</div>
@@ -136,7 +140,15 @@
 			<h1><?php echo get_option('testimonials-heading'); ?></h1>
 		</div>
 		<div class="col-11">
-			<div class="testimonials-box">
+			<div class="testimonials-box init-slick-slider"
+				 data-onlymobile="1"
+				 data-dots="false"
+				 data-infinite="true"
+				 data-speed="3000"
+				 data-autoplay="true"
+				 data-arrows="false"
+				 data-slide="1"
+				 data-toslide="1">
 				<?php foreach ($testimonials as $key => $value): ?>
 					<div class="box">
 						<button class="quote"><img src="<?php echo site_url('assets/static/quote.png'); ?>"></button>
@@ -233,7 +245,7 @@
 </div>
 
 <div class="container-fluid newsletter-area">
-	<div class="row">
+	<div class="row no-margin">
 		<div class="col-12 text-center">
 			<h1><?php echo get_option('newsletter-heading'); ?></h1>
 			<p><?php echo get_option('newsletter-body-before'); ?></p>

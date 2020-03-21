@@ -14,6 +14,9 @@
   <link href="<?php echo base_url(); ?>assets/css/reset.css" rel="stylesheet" type="text/css" media="all">
   <link href="<?php echo base_url(); ?>assets/libs/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
   <link href="<?php echo base_url(); ?>assets/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+  <link href="<?php echo base_url(); ?>assets/libs/lightslider/css/lightslider.min.css" rel="stylesheet" type="text/css" media="all">
+  <link href="<?php echo base_url('assets/libs/slick/slick.css'); ?>" rel="stylesheet" type="text/css" media="all">
+  <link href="<?php echo base_url('assets/libs/slick/slick-theme.css'); ?>" rel="stylesheet" type="text/css" media="all">
 
   <?php if(ENVIRONMENT == 'production'): ?>
   <link href="<?php echo base_url(); ?>assets/css/fonts.min.css" rel="stylesheet" type="text/css" media="all">
@@ -49,7 +52,7 @@
             <img src="<?php echo site_url('assets/static/'.get_option('main-logo')); ?>" alt="<?php echo get_option('meta-title'); ?>">
           </a>
         </div>
-        <div class="menu-area">
+        <div class="menu-area desktop-flex">
           <ul class="menu">
             <?php if(get_option('home-menu-visibility')): ?><li><a class="text-shadow" href="<?php echo site_url(); ?>"><?php echo get_option('home-menu-text'); ?></a></li><?php endif; ?>
             <?php if(get_option('about-menu-visibility')): ?><li><a class="text-shadow" href="<?php echo site_url('about-us'); ?>"><?php echo get_option('about-menu-text'); ?></a></li><?php endif; ?>
@@ -57,11 +60,23 @@
             <?php if(get_option('portfolio-menu-visibility')): ?><li><a class="text-shadow" href="<?php echo site_url('portfolio'); ?>"><?php echo get_option('portfolio-menu-text'); ?></a></li><?php endif; ?>
             <?php if(get_option('blog-menu-visibility')): ?><li><a class="text-shadow" href="<?php echo site_url('blog'); ?>"><?php echo get_option('blog-menu-text'); ?></a></li><?php endif; ?>
             <?php if(get_option('contact-menu-visibility')): ?><li><a class="text-shadow" href="<?php echo site_url('contact-us'); ?>"><?php echo get_option('contact-menu-text'); ?></a></li><?php endif; ?>
-
           </ul>
         </div>
+        <button class="show-sidebar mobile"><i class="fa fa-bars"></i></button>
       </div>
     </header>
+    <div class="bgblack" id="bgblack"></div>
+    <div class="sidebar-menu">
+      <button class="button-hide hide-sidebar"><i class="fa fa-chevron-right"></i></button>
+      <ul class="menu">
+        <?php if(get_option('home-menu-visibility')): ?><li><a class="text-shadow" href="<?php echo site_url(); ?>"><?php echo get_option('home-menu-text'); ?></a></li><?php endif; ?>
+        <?php if(get_option('about-menu-visibility')): ?><li><a class="text-shadow" href="<?php echo site_url('about-us'); ?>"><?php echo get_option('about-menu-text'); ?></a></li><?php endif; ?>
+        <?php if(get_option('service-menu-visibility')): ?><li><a class="text-shadow" href="<?php echo site_url('what-we-do'); ?>"><?php echo get_option('service-menu-text'); ?></a></li><?php endif; ?>
+        <?php if(get_option('portfolio-menu-visibility')): ?><li><a class="text-shadow" href="<?php echo site_url('portfolio'); ?>"><?php echo get_option('portfolio-menu-text'); ?></a></li><?php endif; ?>
+        <?php if(get_option('blog-menu-visibility')): ?><li><a class="text-shadow" href="<?php echo site_url('blog'); ?>"><?php echo get_option('blog-menu-text'); ?></a></li><?php endif; ?>
+        <?php if(get_option('contact-menu-visibility')): ?><li><a class="text-shadow" href="<?php echo site_url('contact-us'); ?>"><?php echo get_option('contact-menu-text'); ?></a></li><?php endif; ?>
+      </ul>
+    </div>
     <section id="body">
       <div class="body-container">
          <?php echo $content; ?>
@@ -114,6 +129,9 @@
 
   <script src="<?php echo base_url(); ?>assets/libs/jquery-1.11.0.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/libs/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/libs/lightslider/js/lightslider.min.js"></script>
+  <script src="<?php echo base_url('assets/libs/slick/slick.js'); ?>"></script>
+
   <?php if(ENVIRONMENT == 'production'): ?>
   <script src="<?php echo base_url(); ?>assets/js/scripts.min.js"></script>
   <?php else: ?>

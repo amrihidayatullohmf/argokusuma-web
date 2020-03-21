@@ -58,7 +58,7 @@
 		</div>
 
 		<div class="col-11">
-			<div class="row about-headline">
+			<div class="row about-headline about">
 				<div class="col no-border text-center">
 					<span>Get In Touch</span>
 					<h1 class="center">Leave Comment</h1>

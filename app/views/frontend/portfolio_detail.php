@@ -12,8 +12,8 @@
 	<div class="row justify-content-md-center no-margin">
 			
 		<div class="col-11 no-padding">
-			<div class="row about-headline no-margin">
-				<div class="col-6 no-border no-padding">
+			<div class="row about-headline about portfolio no-margin">
+				<div class="col-6 no-border no-padding desktop-flex">
 					
 					<div class="row image-display-portfolio">
 						<?php for($i = 0; $i < 4; $i++) { ?>
@@ -23,6 +23,13 @@
 						<div class="col-6 box"><img src="<?php echo site_url('assets/static/detail-dummy-'.($i+1).'.png'); ?>"></div>
 						<?php endif; ?>
 						<?php } ?>
+					</div>
+				</div>
+				<div class="col-6 no-border no-padding mobile-flex">
+					<div class="row image-display-portfolio no-margin no-padding">
+					<?php for($i = 0; $i < 4; $i++) { ?>
+						<div class="col-12 box"><img src="<?php echo site_url('assets/static/detail-dummy-'.($i+1).'.png'); ?>"></div>
+					<?php } ?>
 					</div>
 				</div>
 				<div class="col-6 no-padding">

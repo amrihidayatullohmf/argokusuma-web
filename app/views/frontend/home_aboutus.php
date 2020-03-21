@@ -12,7 +12,7 @@
 	<div class="row justify-content-md-center">
 		
 		<div class="col-11">
-			<div class="row about-headline">
+			<div class="row about-headline about">
 				<div class="col no-border">
 					<span><?php echo get_option('about-headline-sub-1'); ?></span>
 					<h1><?php echo get_option('about-headline-heading-1'); ?></h1>

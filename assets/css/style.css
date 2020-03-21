@@ -64,6 +64,16 @@
 	background : rgba(0,0,0,0.6);
 	display: none;
 }
+.bgwhite {
+	position: fixed;
+	z-index: 9998;
+	top : 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background : rgba(255,255,255,0.6);
+	display: none;
+}
 .popup {
 	position: fixed;
 	z-index: 9999;
@@ -74,6 +84,50 @@
 	transform: translate(-50%,-50%);
 	display: none;
 }	
+.sidebar-menu {
+	position: fixed;
+	top : 0;
+	right: -80%;
+	width: 70%;
+	height: 100%;
+	padding: 0;
+	background: #fff;
+	z-index: 99999;
+	text-align: right;
+}
+.sidebar-menu.on {
+	right: 0;
+}
+.sidebar-menu button.button-hide {
+	margin : 20px;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	border : solid 1px #666;
+	color: #666;
+	background : none;
+	outline: none;
+}
+.sidebar-menu ul.menu {
+	width: 100%;
+	padding: 0;
+	list-style: none;
+}
+
+.sidebar-menu ul.menu li {
+	padding: 20px;
+	border-bottom: solid 1px #f0f0f0;
+	text-align: right;
+}
+.sidebar-menu ul.menu li:first-child {
+	border-top: solid 1px #f0f0f0;
+}
+.sidebar-menu ul.menu li a {
+	text-decoration: none;
+	color: #666;
+	font-family: 'SFUIDisplay-Medium';
+	font-size: 18px;
+}
 * {
 	transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -625,6 +679,13 @@ footer .wrapper .section-full span {
 	-ms-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
 	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
 	-o-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+	text-align: center;
+}
+.testimonials-box .box .quote img {
+	position: absolute;
+	top : 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 }
 .testimonials-box .box h2 {
 	margin: 10px 0 20px 0;
@@ -1294,5 +1355,183 @@ footer .wrapper .section-full span {
 	}
 	.desktop-flex {
 		display: none !important;
+	}
+	.common-1200 {
+		width: 90%;
+	}
+	header .wrapper .brand-area {
+		width: 150px;
+	}
+	header .wrapper .show-sidebar {
+		background : none;
+		outline: none;
+		border:none;
+		color: #fff;
+		font-size: 32px;
+	}
+	header.on .wrapper .show-sidebar {
+		color: #666;
+	}
+	footer .wrapper .section {
+	    width: 100%;
+	    border-bottom: solid 1px #f0f0f0;
+	    text-align: center;
+	    margin-bottom: 20px;
+	}
+	footer .wrapper .section ul.link-lists {
+		padding-left: 0;
+	}
+	.slider-container ul li .text-area {
+		text-align: center;
+	}
+	.slider-container ul li .text-area span {
+		display: inline-block;
+	}
+	.slider-container ul li .text-area h1 {
+		font-size: 23px;
+	}
+	.offset-top {
+		margin-top: -50px;
+	}
+	.justify-content-md-center {
+		justify-content: center;
+	}
+	.blue-container .col,
+	.stat-area .col,
+	.vision .col-5,
+	.about-headline.about .col,
+	.about-headline.about .col-6,
+	.center-section-service .col-6,
+	.card-area.blog,
+	.sidebar-blog,
+	.blog-detail-area {
+		width: 100%;
+		max-width: 100%;
+		flex:  0 0 100%;
+	}
+	.about-headline .col {
+		border-right: none;
+		text-align: center;
+	}
+	.about-headline .col h1,
+	.about-headline .col p {
+		width: 100%;
+	}
+	.stat-area .col {
+		margin-bottom: 20px;
+	}
+	.show-case .desc p {
+	    font-family: 'SFUIDisplay-Light';
+	    font-size: 16px;
+	    line-height: 1.2;
+	    width: 100%;
+	    margin-bottom: 20px;
+	}
+	.showcase-box {
+		flex-wrap: wrap;
+	}
+	.showcase-box .box {
+		width: 50%;
+		height: 200px;
+	}
+	.showcase-box .box .pop img {
+		height: 200px;
+	}
+	.newsletter-area .row {
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%,-50%);
+	}
+	.newsletter-area .input-area {
+		width: 320px;
+	}
+	.testimonials-box {
+		margin-top : 0;
+	}
+	.testimonials-box .box {
+		margin-top: 50px;
+	}
+	.cover-area {
+		background-position: center !important;
+    	background-repeat: no-repeat !important;
+    	background-size: cover !important;
+    	padding-top: 150px;
+	}
+	.vision,
+	.vision .overlay,
+	.vision img {
+		height: 400px;
+	}
+	.vision .text-area {
+	    width: 100%;
+	    position: absolute;
+	    top: 50%;
+	    left: 0;
+	    transform: translate(0,-50%);
+	    padding: 5%;
+	}
+	.slide-image .image-top {
+		right: -10px;
+	}
+	.slide-image .image-bottom {
+		right: 15px;
+		top : 15px;
+	}
+	.center-section-service .col-6 {
+		order : 1;
+	}
+	.center-section-service .col-6.text {
+		order : 2;
+		padding: 5% 10%;
+		text-align: center;
+	}
+	.common-section p.half {
+		width: 100%;
+	}
+	.about-headline.about .col-6 {
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+		text-align: center;
+	}
+	.about-headline.portfolio .col-6 {
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+		text-align: center;
+	}
+	.about-headline.about p {
+		text-align: center;
+		width: 100%;
+	}
+	.about-headline.about h1 {
+	    width: 100%;
+	}
+	.other-project {
+		margin : 0;
+	}
+	.other-project a {
+	    width: 50%;
+	    text-decoration: none;
+	}
+	.about-headline h2 {
+		width: 100%;
+	}
+	.image-display-portfolio {
+		margin-right: 0;
+	}
+	.image-display-portfolio .box {
+		padding: 5px 0;
+	}
+	.portfolio-container .card-area.blog {
+		padding: 5%;
+	}
+	.sidebar-blog {
+		margin-top: 30px;
+		border-top : solid 1px #ccc;
+		padding-top: 20px;
+		background: #fafafa;
+	}
+	.sidebar-blog .popular-box {
+		border-color: #fafafa;
 	}
 }

@@ -12,7 +12,7 @@
 	<div class="row justify-content-md-center">
 			
 		<div class="col-11">
-			<div class="row about-headline ">
+			<div class="row about-headline about">
 				<div class="col-6 no-border">
 					<span>What We Offer</span>
 					<h1>Our Online<br>Marketing Service</h1>
