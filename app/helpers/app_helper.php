@@ -393,3 +393,292 @@ if( ! function_exists(('get_lang'))) {
         return (isset($val->text)) ? $val->text : '';
     }
 }
+
+if( ! function_exists(('get_lang_text'))) {
+    function get_lang_text($lang = 'id',$type = NULL,$item = NULL,$ref = NULL) {
+        if($type == NULL or $item == NULL or $ref == NULL) {
+            return "";
+        }
+
+        $CI =& get_instance();
+        $val = $CI->db->get_where('langs',array('ref_id'=>$ref,'type'=>$type,'item'=>$item,'language'=>$lang))->row();
+       
+        return (isset($val->text)) ? $val->text : '';
+    }
+}
+
+if( ! function_exists(('set_lang'))) {
+    function set_lang($lang = 'id', $type = NULL,$item = NULL,$ref = NULL, $text = "") {
+        if($type == NULL or $item == NULL or $ref == NULL) {
+            return "";
+        }
+
+        $CI =& get_instance();
+        $check = $CI->db->get_where('langs',array('ref_id'=>$ref,'type'=>$type,'item'=>$item,'language'=>$lang))->row();
+       
+        if(isset($check->id)) {
+            return $CI->db->update('langs',['text'=>$text],['id'=>$check->id]);
+        }
+
+        return $CI->db->insert('langs',array('ref_id'=>$ref,'type'=>$type,'item'=>$item,'language'=>$lang,'text'=>$text));
+    }
+}
+
+
+
+if( ! function_exists('check_image') ) {
+    function check_image($path,$filename) {
+        $return = site_url('assets/images/dummy.png');
+
+        if(!empty($filename) and file_exists("./".$path.$filename)) {
+            $return = site_url($path.$filename);
+        }
+
+        return $return;
+    }
+}
+
+if( ! function_exists('slugify') ) {
+    function slugify($text) {
+        $text = strtolower($text);
+        $replace_lists = array(" ","\"","'","\\",",",".","?","/","<",">",
+                               ":",";","{","}","[","]","|","+","=","(",")",
+                               "*","&","ˆ","%","$","#","@","!","`","˜");
+        $replace = str_replace($replace_lists,"-",$text);
+        return strtolower($replace);
+    }
+}
+
+if( ! function_exists('get_available_langs') ) {
+    function get_available_langs() {
+        $langs = get_option('language-options');
+        $langs = @unserialize($langs);
+
+        if($langs == FALSE) {
+            return [];
+        }
+
+        return $langs;
+    }
+}
+
+if( ! function_exists('render_tab_text') ) {
+    function render_tab_text($heading = '', 
+                             $name = '', 
+                             $default_value = '', 
+                             $lang_value_attr = [],
+                             $additional_class = '',
+                             $max_character = 0) {
+        $langs = get_available_langs();
+        ob_start();
+
+        ?>
+        <div class="form-group">
+            <fieldset>
+                <legend><?php echo $heading; ?></legend>
+                <!--
+                <ul class="nav nav-tabs" role="tablist">
+                    <?php $i = 0; foreach($langs as $key => $value): ?>
+                    <li role="presentation" <?php if($i == 0) echo 'class="active"'; ?>><a href="#<?php echo $name.$key; ?>" aria-controls="<?php echo $name.$key; ?>" role="tab" data-toggle="tab"><?php echo $value['label']; ?></a></li>
+                    <?php $i++; endforeach; ?>
+                </ul>
+            -->
+                <div class="tab-content">
+                    <?php 
+                    $i = 0; 
+                    foreach($langs as $key => $value): 
+                        $val = $default_value; 
+                        if(isset($lang_value_attr['type']) and isset($lang_value_attr['item']) and isset($lang_value_attr['ref'])) {
+                            $val = get_lang_text($key,$lang_value_attr['type'],$lang_value_attr['item'],$lang_value_attr['ref']);
+                            if(empty($val)) {
+                                $val = $default_value;
+                            }
+                        }
+                    ?>
+                    <div role="tabpanel" class="tab-pane <?php if($max_character > 0) echo "max-limit" ?> <?php if($i == 0) echo 'active'; ?>" id="<?php echo $name.$key; ?>">
+                        <input class="form-control <?php echo $additional_class; ?>" type="text" name="<?php echo $name; ?>[<?php echo $key; ?>]" value="<?php echo $val; ?>">
+                        <?php if($max_character > 0): ?><p class="help-block"><span class="counter-left" data-max="<?php echo $max_character; ?>"><?php echo $max_character - strlen($val); ?></span> Characters left</p><?php endif; ?>
+                    </div>
+                    <?php $i++; endforeach; ?>
+                </div>         
+            </fieldset>           
+        </div>
+
+        <?php
+
+        echo ob_get_clean();
+    }
+}
+
+if( ! function_exists('render_tab_long_text') ) {
+    function render_tab_long_text($heading = '', 
+                             $name = '', 
+                             $default_value = '', 
+                             $lang_value_attr = [],
+                             $additional_class = '') {
+        $langs = get_available_langs();
+        ob_start();
+
+        ?>
+        <div class="form-group">
+            <fieldset>
+                <legend><?php echo $heading; ?></legend>
+                <!--
+                <ul class="nav nav-tabs" role="tablist">
+                    <?php $i = 0; foreach($langs as $key => $value): ?>
+                    <li role="presentation" <?php if($i == 0) echo 'class="active"'; ?>><a href="#<?php echo $name.$key; ?>" aria-controls="<?php echo $name.$key; ?>" role="tab" data-toggle="tab"><?php echo $value['label']; ?></a></li>
+                    <?php $i++; endforeach; ?>
+                </ul>
+            -->
+                <div class="tab-content">
+                    <?php 
+                    $i = 0; 
+                    foreach($langs as $key => $value): 
+                        $val = $default_value; 
+                        if(isset($lang_value_attr['type']) and isset($lang_value_attr['item']) and isset($lang_value_attr['ref'])) {
+                            $val = get_lang_text($key,$lang_value_attr['type'],$lang_value_attr['item'],$lang_value_attr['ref']);
+                            if(empty($val)) {
+                                $val = $default_value;
+                            }
+                        }
+                    ?>
+                    <div role="tabpanel" class="tab-pane <?php if($i == 0) echo 'active'; ?>" id="<?php echo $name.$key; ?>">
+                        <textarea style="width: 100%;height: 300px;" class="form-control <?php echo $additional_class; ?>" type="text" name="<?php echo $name; ?>[<?php echo $key; ?>]"><?php echo $val; ?></textarea>
+                    </div>
+                    <?php $i++; endforeach; ?>
+                </div>         
+            </fieldset>           
+        </div>
+
+        <?php
+
+        echo ob_get_clean();
+    }
+}
+
+if( ! function_exists('render_uploader') ) {
+    function render_uploader($name = '', 
+                             $default_value = '',
+                             $placeholder = '',
+                             $box_size = [200,200],
+                             $label_size = [200,200]) {
+        ob_start();
+
+        ?>
+        <div class="box-upload" style="width: <?php echo $box_size[0]; ?>;height: <?php echo $box_size[1]; ?>;">
+             <input type="file" class="image-picker" name="<?php echo $name; ?>">
+             <div class="base">
+                <div class="label">
+                    <i class="fa fa-photo"></i>
+                    <br>
+                    <span><?php echo $placeholder; ?><br><b><?php echo $label_size[0]; ?> x <?php echo $label_size[1]; ?></b></span>
+                </div>
+             </div>
+             <img src="<?php echo $default_value;?>" <?php if(!empty($default_value)) echo 'class="on"';?>>
+             <button class="upload-button" type="button"><i class="fa fa-upload"></i></button>
+        </div>
+
+        <?php
+
+        echo ob_get_clean();
+    }
+}
+
+if( ! function_exists('render_multi_uploader') ) {
+    function render_multi_uploader($name = '', 
+                             $default_value = [],
+                             $placeholder = '',
+                             $box_size = [200,200],
+                             $label_size = [200,200]) {
+        ob_start();
+
+        ?>
+        <div class="multi-uploader-media" id="<?php echo $name.'multiuploader'; ?>">
+            <div class="filepicker-container" style="width: 0;height: 0;overflow: hidden;">
+                <?php 
+                foreach ($default_value as $key => $value) { 
+                    echo '<input type="text" name="exist'.$name.'[]" id="'.$name.$key.'" value="'.$value['name'].'">';
+                }
+                ?>    
+            </div>
+            <?php 
+            foreach ($default_value as $key => $value) { 
+            ?>
+            <div class="box-image" style="width: <?php echo $box_size[0]; ?>;height: <?php echo $box_size[1]; ?>;" data-relid="#<?php echo $name.$key; ?>">
+                <img src="<?php echo $value['path']; ?>" class="on">
+                <button class="remove" type="button"><i class="fa fa-trash"></i></button>
+            </div>
+            <?php }  ?>
+            <div class="box-upload" style="width: <?php echo $box_size[0]; ?>;height: <?php echo $box_size[1]; ?>;">
+                 <div class="base">
+                    <div class="label">
+                        <i class="fa fa-plus"></i>
+                        <br>
+                        <span><?php echo $placeholder; ?><br><b><?php echo $label_size[0]; ?> x <?php echo $label_size[1]; ?></b></span>
+                    </div>
+                 </div>
+                 <button class="upload-button multi-uploader" 
+                         data-name="<?php echo $name; ?>"
+                         data-container="#<?php echo $name.'multiuploader'; ?>" 
+                         data-width="<?php echo $box_size[0]; ?>"
+                         data-height="<?php echo $box_size[1]; ?>" 
+                         type="button"><i class="fa fa-upload"></i></button>
+            </div>
+        </div>
+        <?php
+
+        echo ob_get_clean();
+    }
+}
+
+if( !function_exists('get_user_point') ) {
+    function get_user_point($uid) {
+        $CI =& get_instance();
+        $user = $CI->db->get_where('user',array('id'=>$uid,'is_active'=>1))->row();
+
+        if(!isset($user->id)) {
+            return 0;
+        }
+
+        $phone = $user->phone;
+
+        if(empty($phone)) {
+            return 0;
+        }
+
+        $url = "https://crm.pti-cosmetics.com/api/wardah/consumer/point?token=".get_option('pti-point-token')."&phone=".$phone;
+
+        $ch = curl_init();  
+ 
+        curl_setopt($ch,CURLOPT_URL,$url);
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+     
+        $output=curl_exec($ch);
+     
+        curl_close($ch);
+
+        if(!empty($output) and $output != FALSE) {
+            $save = $CI->db->update('user',['point_count'=>$output],['id'=>$user->id]);
+
+            if(isset($save) and $save != FALSE) {
+                $CI->db->insert('user_point_log',[
+                                                'user_id' => $user->id,
+                                                'point' => $output,
+                                                'created_date' => date('Y-m-d H:i:s')
+                                                ]);
+
+                return $output;
+            }
+        }
+
+        return 0;
+    } 
+}
+
+if( !function_exists('date_compared_array') ) {
+    function date_compared_array($a, $b) {
+        $t1 = strtotime($a['submission_date']);
+        $t2 = strtotime($b['submission_date']);
+        return $t2 - $t1;
+    }    
+}

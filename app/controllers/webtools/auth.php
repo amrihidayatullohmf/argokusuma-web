@@ -45,7 +45,7 @@ class Auth extends APP_Webtools_Login {
 
 		if( $csrf_hash!=$csrf_hash_ori  ){
 			$this->session->set_flashdata('msg', 'invalid username or password');
-			redirect('webtools/auth/login/1');
+			//redirect('webtools/auth/login/1');
 		}
 
 		$username = strtolower($this->input->post('username'));

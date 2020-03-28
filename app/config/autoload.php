@@ -128,5 +128,6 @@ $autoload['language'] = array();
 */
 $autoload['model'] = array(
 						'general_model'=>'general',
-						'project_model'=>'project'
+						'project_model'=>'project',
+						'news_model'=>'news',
 					 );

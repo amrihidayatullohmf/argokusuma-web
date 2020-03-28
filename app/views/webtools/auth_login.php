@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login</title>
+    <title>Argokusuma | Webtools Login</title>
+    <meta name="keywords" content="<?php echo isset($meta_keywords) ? $meta_keywords : ''; ?>">
+    <link rel="icon" type="image/png" href="<?php echo site_url('assets/static/'.get_option('meta-favicon')); ?>" />
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -27,7 +29,9 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="<?php echo site_url('webtools'); ?>"><b>Administrator</b></a>
+        <a href="<?php echo site_url('webtools'); ?>"><b>
+          <img src="<?php echo site_url('assets/static/'.get_option('main-logo')); ?>" alt="<?php echo get_option('meta-title'); ?>" width="300">
+        </b></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
 
@@ -48,17 +52,8 @@
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
-            <div class="col-xs-8">
-              <div class="checkbox icheck">
-                <!--
-                <label>
-                  <input type="checkbox"> Remember Me
-                </label>
-                -->
-              </div>
-            </div><!-- /.col -->
-            <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+            <div class="col-xs-12">
+              <button type="submit" class="btn btn-danger btn-block btn-flat" style="width: 100%;">Sign In</button>
             </div><!-- /.col -->
           </div>
         </form>

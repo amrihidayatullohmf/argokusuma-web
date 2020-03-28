@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>WebTools</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    
+     <meta name="keywords" content="<?php echo isset($meta_keywords) ? $meta_keywords : ''; ?>">
+    <link rel="icon" type="image/png" href="<?php echo site_url('assets/static/'.get_option('meta-favicon')); ?>" />
+
     <link rel="stylesheet" href="<?php echo assets_url('libs/bootstrap/css/bootstrap.min.css'); ?>">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo assets_url('libs/font-awesome/css/font-awesome.min.css'); ?>">
@@ -19,6 +21,19 @@
     <!-- iCheck -->
     <link rel="stylesheet" href="<?php echo assets_url('libs/adminlte/plugins/iCheck/flat/blue.css'); ?>">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/libs/font-awesome/css/font-awesome.min.css'); ?>">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/libs/sweetalert/sweetalert.css'); ?>">
+
+    <!-- JQuery UI -->
+    <link href="<?php echo base_url(); ?>assets/libs/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="<?php echo base_url(); ?>assets/libs/jqueryui/jquery-ui.theme.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="<?php echo base_url(); ?>assets/libs/jqueryui/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css" media="all">
+
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/webtools.css?v='.date('U')); ?>">
+
     <?php echo $styles; ?>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -66,7 +81,127 @@
 	                <i class="fa fa-th"></i> <span>Dashboard</span>
 	              </a>
 	            </li>
+
+              <li class="<?php echo $this->router->class=='medias' ? 'active' : ''; ?>"">
+                <a href="<?php echo site_url('webtools/medias/slider'); ?>">
+                  <i class="fa fa-image"></i> <span>Home Sliders</span>
+                </a>
+              </li>
+
+              <li class="treeview <?php echo $this->router->class=='articles' ? 'active' : ''; ?>">
+                <a href="<?php echo site_url('webtools/articles'); ?>">
+                  <i class="fa fa-pencil"></i>
+                  <span>Articles</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li class="<?php echo $this->router->class=='articles' && $this->router->method=='index'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/articles'); ?>"><i class="fa fa-circle-o"></i> List Article</a>
+                  </li>
+                  <li class="<?php echo $this->router->class=='articles' && $this->router->method=='action'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/articles/action/add'); ?>"><i class="fa fa-circle-o"></i> Compose New</a>
+                  </li>
+                  <li class="<?php echo $this->router->class=='articles' && $this->router->method=='category'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/articles/category'); ?>"><i class="fa fa-circle-o"></i> Categories</a>
+                  </li>
+                  <li class="<?php echo $this->router->class=='articles' && $this->router->method=='comment'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/articles/comment'); ?>"><i class="fa fa-circle-o"></i> Comments</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="treeview <?php echo $this->router->class=='portfolio' ? 'active' : ''; ?>">
+                <a href="<?php echo site_url('webtools/portfolio'); ?>">
+                  <i class="fa fa-image"></i>
+                  <span>Portfolio</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li class="<?php echo $this->router->class=='portfolio' && $this->router->method=='index'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/portfolio'); ?>"><i class="fa fa-circle-o"></i> List Portfolio</a>
+                  </li>
+                  <li class="<?php echo $this->router->class=='portfolio' && $this->router->method=='action'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/portfolio/action/add'); ?>"><i class="fa fa-circle-o"></i> Add Project</a>
+                  </li>
+                  <li class="<?php echo $this->router->class=='portfolio' && $this->router->method=='category'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/portfolio/category'); ?>"><i class="fa fa-circle-o"></i> Categories</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="treeview <?php echo $this->router->class=='services' ? 'active' : ''; ?>">
+                <a href="<?php echo site_url('webtools/services'); ?>">
+                  <i class="fa fa-briefcase"></i>
+                  <span>Services</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li class="<?php echo $this->router->class=='services' && $this->router->method=='index'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/services'); ?>"><i class="fa fa-circle-o"></i> List Services</a>
+                  </li>
+                  <li class="<?php echo $this->router->class=='services' && $this->router->method=='action'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/services/action/add'); ?>"><i class="fa fa-circle-o"></i> Add Service</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="treeview <?php echo $this->router->class=='submission' ? 'active' : ''; ?>">
+                <a href="<?php echo site_url('webtools/submission'); ?>">
+                  <i class="fa fa-envelope"></i>
+                  <span>Submissions</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li class="<?php echo $this->router->class=='submission' && $this->router->method=='guestbook'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/submission/guestbook'); ?>"><i class="fa fa-circle-o"></i> Contact (Guestbook)</a>
+                  </li>
+                  <li class="<?php echo $this->router->class=='submission' && $this->router->method=='action'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/submission/testimonials'); ?>"><i class="fa fa-circle-o"></i> Testimonials</a>
+                  </li>
+                  <li class="<?php echo $this->router->class=='submission' && $this->router->method=='subscription'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/submission/subscription'); ?>"><i class="fa fa-circle-o"></i> E-Mail Subscriptions</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="<?php echo $this->router->class=='teams' ? 'active' : ''; ?>"">
+                <a href="<?php echo site_url('webtools/teams'); ?>">
+                  <i class="fa fa-users"></i> <span>Teams</span>
+                </a>
+              </li>
 	            
+              <li class="treeview <?php echo $this->router->class=='settings' ? 'active' : ''; ?>">
+                <a href="<?php echo site_url('webtools/settings'); ?>">
+                  <i class="fa fa-cog"></i>
+                  <span>Settings</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li class="<?php echo $this->router->class=='settings' && $setting_current=='general'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/settings/index/general'); ?>"><i class="fa fa-circle-o"></i> General</a>
+                  </li>
+                  
+                  <li class="<?php echo $this->router->class=='settings' && $setting_current=='menubar'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/settings/index/menubar'); ?>"><i class="fa fa-circle-o"></i> Menu Bar</a>
+                  </li>
+
+                  <li class="<?php echo $this->router->class=='settings' && $setting_current=='footer'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/settings/index/footer'); ?>"><i class="fa fa-circle-o"></i> Web Footer</a>
+                  </li>
+
+                  <li class="<?php echo $this->router->class=='settings' && $setting_current=='homepage'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/settings/index/homepage'); ?>"><i class="fa fa-circle-o"></i> Homepage</a>
+                  </li>
+              
+                  <li class="<?php echo $this->router->class=='settings' && $setting_current=='contact'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/settings/index/contact'); ?>"><i class="fa fa-circle-o"></i> Contact</a>
+                  </li>
+                </ul>
+              </li>
+
+
+          
+
               <?php if($user->group!=3): ?>
               
               <li class="treeview <?php echo $this->router->class=='admin' ? 'active' : ''; ?>">
@@ -140,8 +275,23 @@
     <script src="<?php echo assets_url('libs/adminlte/js/app.min.js'); ?>"></script>
 
     <script type="text/javascript">
-    var baseurl = '<?php echo base_url(); ?>';
+    var baseurl = '<?php echo base_url('webtools'); ?>/';
     </script>
+
+    <!-- Jquery Form -->
+    <script src="<?php echo base_url(); ?>assets/libs/jquery.form.min.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="<?php echo base_url('assets/libs/sweetalert/sweetalert.js'); ?>"></script>
+
+    <!-- Tinymce -->
+    <script src="<?php echo base_url('assets/libs/tinymce/tinymce.min.js'); ?>"></script>
+
+    <!-- Jquery UI -->
+    <script src="<?php echo base_url(); ?>assets/libs/jqueryui/jquery-ui.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/libs/jqueryui/jquery-ui-timepicker-addon.js"></script>
+
+    <script src="<?php echo base_url('assets/js/webtools.js?v='.date('U')) ?>"></script>
 
     <?php echo $scripts; ?>
     
