@@ -126,6 +126,9 @@
                   <li class="<?php echo $this->router->class=='portfolio' && $this->router->method=='category'  ? 'active' : ''; ?>">
                     <a href="<?php echo site_url('webtools/portfolio/category'); ?>"><i class="fa fa-circle-o"></i> Categories</a>
                   </li>
+                  <li class="<?php echo $this->router->class=='portfolio' && $this->router->method=='clients'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/portfolio/clients'); ?>"><i class="fa fa-circle-o"></i> Clients</a>
+                  </li>
                 </ul>
               </li>
 

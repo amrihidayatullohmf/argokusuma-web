@@ -67,6 +67,7 @@
 								    </label>
 								</div>
      							<?php } ?>
+     							<p class="help-block"><a href="<?php echo site_url('articles/category'); ?>" target="_blank">+ Add New Category</a></p>
 							  </div>
 						  </div>
 						</div>
