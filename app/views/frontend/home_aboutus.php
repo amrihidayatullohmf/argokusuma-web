@@ -1,9 +1,9 @@
-<div class="container-fluid cover-area" style="background: url(assets/static/aboutcover.png);">
+<div class="container-fluid cover-area" style="background: url(assets/static/<?php echo get_option('aboutus-cover'); ?>);">
 	<div class="overlay"></div>
 	<div class="row">
 		<div class="col-10 text-left">
-			<span class="text-shadow">About Us</span>
-			<h1 class="text-shadow">Imagine Creates.</h1>
+			<span class="text-shadow"><?php echo get_option('about-title'); ?></span>
+			<h1 class="text-shadow"><?php echo get_option('about-sub-title'); ?></h1>
 		</div>
 	</div>
 </div>
@@ -14,9 +14,9 @@
 		<div class="col-11">
 			<div class="row about-headline about">
 				<div class="col no-border">
-					<span><?php echo get_option('about-headline-sub-1'); ?></span>
-					<h1><?php echo get_option('about-headline-heading-1'); ?></h1>
-					<p><?php echo get_option('about-headline-body-1'); ?></p>
+					<span><?php echo get_option('aboutus-headline'); ?></span>
+					<h1><?php echo get_option('aboutus-headline-heading'); ?></h1>
+					<p><?php echo get_option('aboutus-headline-body'); ?></p>
 					<a href="<?php echo site_url('about-us'); ?>">Read More About Us</a>
 				</div>
 				<div class="col">
@@ -71,68 +71,35 @@
 		</div>
 		<div class="col-11">
 			<div class="teams-box">
+				<?php foreach ($teams as $key => $value) { ?>
 				<div class="team">
-					<img src="<?php echo site_url('medias/teams/teamdummy.png'); ?>">
+					<img src="<?php echo site_url('medias/teams/'.$value['photo']); ?>">
 					<div class="text">
-						<h1>Rendra Setyo AE</h1>
-						<span>Founder &amp; CEO</span>
+						<h1><?php echo $value['name']; ?></h1>
+						<span><?php echo $value['position']; ?></span>
 					</div>
 				</div>
-				<div class="team">
-					<img src="<?php echo site_url('medias/teams/teamdummy.png'); ?>">
-					<div class="text">
-						<h1>Rendra Setyo AE</h1>
-						<span>Founder &amp; CEO</span>
-					</div>
-				</div>
-				<div class="team">
-					<img src="<?php echo site_url('medias/teams/teamdummy.png'); ?>">
-					<div class="text">
-						<h1>Rendra Setyo AE</h1>
-						<span>Founder &amp; CEO</span>
-					</div>
-				</div>
-				<div class="team">
-					<img src="<?php echo site_url('medias/teams/teamdummy.png'); ?>">
-					<div class="text">
-						<h1>Rendra Setyo AE</h1>
-						<span>Founder &amp; CEO</span>
-					</div>
-				</div>
-				<div class="team">
-					<img src="<?php echo site_url('medias/teams/teamdummy.png'); ?>">
-					<div class="text">
-						<h1>Rendra Setyo AE</h1>
-						<span>Founder &amp; CEO</span>
-					</div>
-				</div>
-				<div class="team">
-					<img src="<?php echo site_url('medias/teams/teamdummy.png'); ?>">
-					<div class="text">
-						<h1>Rendra Setyo AE</h1>
-						<span>Founder &amp; CEO</span>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>		
 	</div>
 </div>
 
 <div class="vision">
-	<img src="<?php echo site_url('assets/static/backgroundaboutvm.png'); ?>">
+	<img src="<?php echo site_url('assets/static/'.get_option('vission-mission-background')); ?>">
 	<div class="overlay"></div>
 	<div class="text-area">
 		<div class="container-fluid">
 			<div class="row justify-content-md-center">
 				<div class="col-5">
-					<span class="number">01.</span>
-					<h2>Our Mission</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit.</p>
+					<span class="number"><?php echo get_option('aboutus-mission-number'); ?></span>
+					<h2><?php echo get_option('aboutus-mission-title'); ?></h2>
+					<p><?php echo get_option('aboutus-mission-body'); ?></p>
 				</div>
 				<div class="col-5">
-					<span class="number">02.</span>
-					<h2>Our Vission</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit.</p>
+					<span class="number"><?php echo get_option('aboutus-vission-number'); ?></span>
+					<h2><?php echo get_option('aboutus-vission-title'); ?></h2>
+					<p><?php echo get_option('aboutus-vission-body'); ?></p>
 				</div>
 			</div>
 		</div>
@@ -142,9 +109,9 @@
 <div class="container-fluid common-section">
 	<div class="row justify-content-md-center">
 		<div class="col-11 text-center">
-			<span class="sub">Get Started</span><br>
-			<h1>Ready to Get Started</h1>
-			<p>Our team is always ready to work with exciting and ambitious clients. If you are ready to start your creative partnership with us. Get in touch</p>
+			<span class="sub"><?php echo get_option('aboutus-bottom-subtitle'); ?></span><br>
+			<h1><?php echo get_option('aboutus-bottom-title'); ?></h1>
+			<p><?php echo get_option('aboutus-bottom-body'); ?></p>
 			<a href="<?php echo site_url('contact-us'); ?>">
 				<button class="blue medium">Contact Us&nbsp;&nbsp;<img src="<?php echo site_url('assets/static/arrowsubscribe.png'); ?>" height="15"></button>
 			</a>
@@ -153,11 +120,11 @@
 			<div class="line-separator no-padding"></div>
 		</div>
 		<div class="col-11 clients text-center">
-			<p>Our clients are always satified with the quality of services:</p>
+			<p><?php echo get_option('client-pre-text'); ?></p>
 			<div class="client-logos">
-				<div class="logo"><img src="<?php echo site_url('medias/clients/01.png'); ?>"></div>
-				<div class="logo"><img src="<?php echo site_url('medias/clients/02.png'); ?>"></div>
-				<div class="logo"><img src="<?php echo site_url('medias/clients/03.png'); ?>"></div>
+				<?php foreach ($clients as $key => $value) { ?>
+				<div class="logo"><img src="<?php echo site_url('medias/clients/'.$value['icon']); ?>" alt="<?php echo $value['name']; ?>"></div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>

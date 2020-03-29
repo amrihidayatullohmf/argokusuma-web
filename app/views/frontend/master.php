@@ -17,13 +17,14 @@
   <link href="<?php echo base_url(); ?>assets/libs/lightslider/css/lightslider.min.css" rel="stylesheet" type="text/css" media="all">
   <link href="<?php echo base_url('assets/libs/slick/slick.css'); ?>" rel="stylesheet" type="text/css" media="all">
   <link href="<?php echo base_url('assets/libs/slick/slick-theme.css'); ?>" rel="stylesheet" type="text/css" media="all">
+  <link rel="stylesheet" href="<?php echo base_url('assets/libs/sweetalert/sweetalert.css'); ?>">
 
   <?php if(ENVIRONMENT == 'production'): ?>
   <link href="<?php echo base_url(); ?>assets/css/fonts.min.css" rel="stylesheet" type="text/css" media="all">
   <link href="<?php echo base_url(); ?>assets/css/style.min.css" rel="stylesheet" type="text/css" media="all">
   <?php else: ?>
   <link href="<?php echo base_url(); ?>assets/css/fonts.css" rel="stylesheet" type="text/css" media="all">
-  <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+  <link href="<?php echo base_url(); ?>assets/css/style.css?v=<?php echo date('U'); ?>" rel="stylesheet" type="text/css" media="all">
   <?php endif; ?>
 
   <?php echo $styles; ?>
@@ -95,17 +96,17 @@
         <div class="section">
           <h2><?php echo get_option('quicklink-section-heading'); ?></h2>
           <ul class="link-lists">
-            <?php if(get_option('service-menu-visibility')): ?><li><a href="<?php echo site_url(); ?>"><?php echo get_option('service-menu-text'); ?></a></li><?php endif; ?>
-            <?php if(get_option('portfolio-menu-visibility')): ?><li><a href="<?php echo site_url(); ?>"><?php echo get_option('portfolio-menu-text'); ?></a></li><?php endif; ?>
-            <?php if(get_option('blog-menu-visibility')): ?><li><a href="<?php echo site_url(); ?>"><?php echo get_option('blog-menu-text'); ?></a></li><?php endif; ?>
+            <?php if(get_option('service-menu-visibility')): ?><li><a href="<?php echo site_url('what-we-do'); ?>"><?php echo get_option('service-menu-text'); ?></a></li><?php endif; ?>
+            <?php if(get_option('portfolio-menu-visibility')): ?><li><a href="<?php echo site_url('portfolio'); ?>"><?php echo get_option('portfolio-menu-text'); ?></a></li><?php endif; ?>
+            <?php if(get_option('blog-menu-visibility')): ?><li><a href="<?php echo site_url('blog'); ?>"><?php echo get_option('blog-menu-text'); ?></a></li><?php endif; ?>
           </ul>
         </div>
         <div class="section">
           <h2><?php echo get_option('latest-section-heading'); ?></h2>
           <ul class="link-lists">
-            <li><a href="#">Business<br><span>February 21st 2020</span></a></li>
-            <li><a href="#">Business<br><span>February 21st 2020</span></a></li>
-            <li><a href="#">Business<br><span>February 21st 2020</span></a></li>
+            <?php foreach ($latestnews['lists'] as $key => $value) { ?>
+            <li><a href="<?php echo $value['url']; ?>"><?php echo $value['title']; ?><br><span><?php echo $value['date_formatted']; ?></span></a></li>
+            <?php } ?>
           </ul>
         </div>
         <div class="section">
@@ -131,6 +132,8 @@
   <script src="<?php echo base_url(); ?>assets/libs/bootstrap-4.4.1/js/bootstrap.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/libs/lightslider/js/lightslider.min.js"></script>
   <script src="<?php echo base_url('assets/libs/slick/slick.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/libs/sweetalert/sweetalert.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/libs/mustache.min.js'); ?>"></script>
 
   <?php if(ENVIRONMENT == 'production'): ?>
   <script src="<?php echo base_url(); ?>assets/js/scripts.min.js"></script>

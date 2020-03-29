@@ -44,7 +44,7 @@
                   		<input type="hidden" name="idsegment[<?php echo $i; ?>]" value="<?php echo $value['id']; ?>">
                   		<div class="row">
                   			<div class="col-xs-3">
-                  				<?php render_uploader('thumb[$i]',((!empty($value['image'])) ? site_url('medias/services/'.$value['image']) : ''),'Thumbnail Image',['100%','200px'],['100px','100px']); ?>
+                  				<?php render_uploader('thumb-'.$i,((!empty($value['image'])) ? site_url('medias/services/'.$value['image']) : ''),'Thumbnail Image',['100%','200px'],['100px','100px']); ?>
                   			</div>
                   			<div class="col-xs-9">
                   				<label>Title</label>
@@ -74,7 +74,7 @@
                   		<input type="hidden" name="idsegment[NUM]" value="0">
                   		<div class="row">
                   			<div class="col-xs-3">
-                  				<?php render_uploader('thumb[NUM]','','Thumbnail Image',['100%','200px'],['100px','100px']); ?>
+                  				<?php render_uploader('thumb-NUM','','Thumbnail Image',['100%','200px'],['100px','100px']); ?>
                   			</div>
                   			<div class="col-xs-9">
                   				<label>Title</label>

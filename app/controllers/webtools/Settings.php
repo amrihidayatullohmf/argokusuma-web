@@ -52,8 +52,8 @@ class Settings extends APP_Webtools {
 
 					$newname = $value['option_key']."-".date('U').".".$ext;
 
-					if(!move_uploaded_file($temp, "./assets/images/".$newname)) {
-						if(copy($temp, "./assets/images/".$newname)) {
+					if(!move_uploaded_file($temp, "./assets/static/".$newname)) {
+						if(copy($temp, "./assets/static/".$newname)) {
 							$newvalue = $newname;
 						}
 					} else {

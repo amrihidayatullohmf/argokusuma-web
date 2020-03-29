@@ -63,6 +63,7 @@ class Services extends APP_Webtools {
 		if(!empty($title) and !empty($caption) and !empty($description)) {
 			$datas = array(
 						'title' => $title,
+						'slug' => slugify($title),
 						'caption' => $caption,
 						'description' => $description
 					 );
@@ -97,14 +98,14 @@ class Services extends APP_Webtools {
 			}
 
 			if(isset($save) and $save != FALSE) {
-				$countersegment = $_POST['countersegment'];
+				$countersegment = (isset($_POST['countersegment'])) ? $_POST['countersegment'] : [];
 
 
 				foreach ($countersegment as $key => $value) {
 					$idsegment = (isset($_POST['idsegment'][$value])) ? $_POST['idsegment'][$value] : 0;
 					$title = (isset($_POST['ttl'][$value])) ? $_POST['ttl'][$value] : '';
 					$desc = $_POST['desc'][$value];
-					$thumb = (isset($_FILES['thumb'])) ? $_FILES['thumb']: NULL;
+					$thumb = (isset($_FILES['thumb-'.$value])) ? $_FILES['thumb-'.$value]: NULL;
 
 					$datas = [
 						'service_id' => $id,
@@ -113,11 +114,11 @@ class Services extends APP_Webtools {
 					];
 
 					if($thumb != NULL) {
-						if(isset($thumb['name'][$value])) {
-							$name = $thumb['name'][$value];
-							$tmp_name = $thumb['tmp_name'][$value];
-							$size = $thumb['size'][$value];
-							$error = $thumb['error'][$value];
+						if(isset($thumb['name'])) {
+							$name = $thumb['name'];
+							$tmp_name = $thumb['tmp_name'];
+							$size = $thumb['size'];
+							$error = $thumb['error'];
 
 							if($size > 0 and $error == 0) {
 								if(!@move_uploaded_file($tmp_name, "./medias/services/".$name)) {

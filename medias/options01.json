@@ -219,6 +219,20 @@
 			"caption": "Twitter URL",
 			"desclimer": "",
 			"editable": "1"
+		}, {
+			"option_key": "contactus-cover",
+			"option_value": "contactusbanner.png",
+			"field_type": "image",
+			"caption": "Contact Us Cover",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "embed-map-url",
+			"option_value": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.361918811779!2d106.79521931426869!3d-6.21591066261227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f749eaf101f5%3A0xcd62c14b7a08da30!2sGBK%20Arena!5e0!3m2!1sen!2sid!4v1584298082160!5m2!1sen!2sid",
+			"field_type": "longtext",
+			"caption": "Embed Map URL",
+			"desclimer": "",
+			"editable": "1"
 		}],
 	"homepage": [{
 			"option_key": "service-head-1",
@@ -477,6 +491,205 @@
 			"option_value": "Your personal detail is safa with us",
 			"field_type": "text",
 			"caption": "Newsletter body after",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "client-pre-text",
+			"option_value": "Our clients are always satified with the quality of services:",
+			"field_type": "text",
+			"caption": "Our Clients Pre Text",
+			"desclimer": "",
+			"editable": "1"
+		}],
+	"about-us": [{
+			"option_key": "about-title",
+			"option_value": "About Us",
+			"field_type": "text",
+			"caption": "About Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "about-sub-title",
+			"option_value": "Imagine Creates.",
+			"field_type": "text",
+			"caption": "About Sub Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-headline",
+			"option_value": "What We Do",
+			"field_type": "text",
+			"caption": "Sub Headline About",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-headline-heading",
+			"option_value": "Highest Creative Standard",
+			"field_type": "longtext",
+			"caption": "Headline About",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-headline-body",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit.",
+			"field_type": "text",
+			"caption": "Sub Headline Body About",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-bottom-title",
+			"option_value": "Ready to Get Started",
+			"field_type": "text",
+			"caption": "Bottom Section Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-bottom-subtitle",
+			"option_value": "Get Started",
+			"field_type": "longtext",
+			"caption": "Botttom Section Sub Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-bottom-body",
+			"option_value": "Our team is always ready to work with exciting and ambitious clients. If you are ready to start your creative partnership with us. Get in touch",
+			"field_type": "text",
+			"caption": "Bottom Section Body",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-mission-number",
+			"option_value": "01",
+			"field_type": "text",
+			"caption": "Mission Number",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-mission-title",
+			"option_value": "Our Mission",
+			"field_type": "longtext",
+			"caption": "Mission Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-mission-body",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit.",
+			"field_type": "text",
+			"caption": "Mission Body",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-vission-number",
+			"option_value": "01",
+			"field_type": "text",
+			"caption": "Vission Number",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-vission-title",
+			"option_value": "Our Vission",
+			"field_type": "longtext",
+			"caption": "Vission Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-vission-body",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit.",
+			"field_type": "text",
+			"caption": "Vission Body",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "vission-mission-background",
+			"option_value": "backgroundaboutvm.png",
+			"field_type": "image",
+			"caption": "Mission & Vission Background",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "aboutus-cover",
+			"option_value": "aboutcover.png",
+			"field_type": "image",
+			"caption": "About Us Cover",
+			"desclimer": "",
+			"editable": "1"
+		}],
+	"services": [{
+			"option_key": "service-title",
+			"option_value": "What We Offer",
+			"field_type": "text",
+			"caption": "Service Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-sub-title",
+			"option_value": "Services.",
+			"field_type": "text",
+			"caption": "About Sub Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-cover",
+			"option_value": "coverservice1.png",
+			"field_type": "image",
+			"caption": "Service Us Cover",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-highlight-title",
+			"option_value": "Explore Our Services",
+			"field_type": "text",
+			"caption": "Service Highlight Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-highlight-body",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit. Curabitur nec aliquam sem. Nam vestibulum accumsan vestibulum.",
+			"field_type": "text",
+			"caption": "Service Highlight Body",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-middle-sub-title",
+			"option_value": "What We Do",
+			"field_type": "text",
+			"caption": "Service Middle Sub Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-middle-title",
+			"option_value": "Whatever the challenge, We always deliver solution.",
+			"field_type": "text",
+			"caption": "Service Highlight Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "service-middle-body",
+			"option_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit. Curabitur nec aliquam sem. Nam vestibulum accumsan vestibulum.",
+			"field_type": "text",
+			"caption": "Service Middle Body",
+			"desclimer": "",
+			"editable": "1"
+		}],
+	"portfolio": [{
+			"option_key": "portfolio-title",
+			"option_value": "Our Projects",
+			"field_type": "text",
+			"caption": "Portfolio Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "portfolio-sub-title",
+			"option_value": "Portfolio.",
+			"field_type": "text",
+			"caption": "Portfolio Sub Title",
+			"desclimer": "",
+			"editable": "1"
+		}, {
+			"option_key": "portfolio-cover",
+			"option_value": "banner-portfolio-landing.png",
+			"field_type": "image",
+			"caption": "Portfolio Us Cover",
 			"desclimer": "",
 			"editable": "1"
 		}]

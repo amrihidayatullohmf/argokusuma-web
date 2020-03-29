@@ -1,9 +1,9 @@
-<div class="container-fluid cover-area" style="background: url(assets/static/coverservice1.png);">
+<div class="container-fluid cover-area" style="background: url(assets/static/<?php echo get_option('service-cover'); ?>);">
 	<div class="overlay"></div>
 	<div class="row">
 		<div class="col-10 text-left">
-			<span class="text-shadow">What We Offer</span>
-			<h1 class="text-shadow">Services</h1>
+			<span class="text-shadow"><?php echo get_option('service-title'); ?></span>
+			<h1 class="text-shadow"><?php echo get_option('service-sub-title'); ?></h1>
 		</div>
 	</div>
 </div>
@@ -11,71 +11,27 @@
 <div class="container-fluid">
 	<div class="row justify-content-md-center">
 		<div class="col-11 blue-container smaller white common-section text-center">
-			<span class="sub">What We Offer</span>
-			<h1>Explore Our Services</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit. Curabitur nec aliquam sem. Nam vestibulum accumsan vestibulum. </p>
+			<span class="sub"><?php echo get_option('service-title'); ?></span>
+			<h1><?php echo get_option('service-highlight-title'); ?></h1>
+			<p><?php echo get_option('service-highlight-body'); ?></p>
 			<div class="row">
+				<?php $i = 1; foreach ($services as $key => $value) { ?>
 				<div class="col text-center">
-					<a href="<?php echo site_url('what-we-do/digital-products'); ?>">
+					<a href="<?php echo site_url('what-we-do/'.$value['slug']); ?>">
 						<div class="icon-area">
-							<img src="<?php echo site_url('assets/static/icon7.png'); ?>">
+							<img src="<?php echo site_url('medias/services/'.$value['icon_image']); ?>">
 							<div class="circle"></div>
 						</div>
 					</a>
-					<h1 class="center">Digital Products</h1>
-					<p><?php echo get_option('service-body-1'); ?></p>
+					<h1 class="center"><?php echo $value['title']; ?></h1>
+					<p><?php echo substr(strip_tags($value['description']),0,100); if(strlen(strip_tags($value['description'])) > 100) echo '...'; ?></p>
 				</div>
-				<div class="col text-center">
-					<a href="<?php echo site_url('what-we-do/digital-products'); ?>">
-						<div class="icon-area">
-							<img src="<?php echo site_url('assets/static/icon8.png'); ?>">
-							<div class="circle"></div>
-						</div>
-					</a>
-					<h1 class="center">Online Marketing</h1>
-					<p><?php echo get_option('service-body-2'); ?></p>
-				</div>
-				<div class="col text-center">
-					<a href="<?php echo site_url('what-we-do/digital-products'); ?>">
-						<div class="icon-area">
-							<img src="<?php echo site_url('assets/static/icon9.png'); ?>">
-							<div class="circle"></div>
-						</div>
-					</a>
-					<h1 class="center">Product Design</h1>
-					<p><?php echo get_option('service-body-3'); ?></p>
-				</div>
-				 <div class="w-100"><br></div>
-				<div class="col text-center">
-					<a href="<?php echo site_url('what-we-do/digital-products'); ?>">
-						<div class="icon-area">
-							<img src="<?php echo site_url('assets/static/icon7.png'); ?>">
-							<div class="circle"></div>
-						</div>
-					</a>
-					<h1 class="center">Strategy &amp; Planning</h1>
-					<p><?php echo get_option('service-body-1'); ?></p>
-				</div>
-				<div class="col text-center">
-					<a href="<?php echo site_url('what-we-do/digital-products'); ?>">
-						<div class="icon-area">
-							<img src="<?php echo site_url('assets/static/icon8.png'); ?>">
-							<div class="circle"></div>
-						</div>
-					</a>
-					<h1 class="center">Market Research</h1>
-					<p><?php echo get_option('service-body-2'); ?></p>
-				</div>
-				<div class="col text-center">
-					<a href="<?php echo site_url('what-we-do/digital-products'); ?>">
-						<div class="icon-area">
-							<img src="<?php echo site_url('assets/static/icon9.png'); ?>">
-							<div class="circle"></div>
-						</div>
-					</a>
-					<h1 class="center">Environtment Consulting</h1>
-					<p><?php echo get_option('service-body-3'); ?></p>
-				</div>
+				<?php
+				if($i % 3 == 0) { echo '<div class="w-100"><br></div>'; }
+				$i++;
+				} 
+				?>
+				
 			</div>
 		</div>
 		
@@ -84,10 +40,10 @@
 <div class="container-fluid common-section center-section-service">
 	<div class="row justify-content-md-center no-padding">
 		<div class="col-6 text">
-			<span class="sub">What We Do</span><br>
-			<h1>Whatever the challenge, We always deliver solution.</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit. Curabitur nec aliquam sem. Nam vestibulum accumsan vestibulum. Aenean ipsum sapien, viverra sit amet orci at, semper condimentum nisl. Donec scelerisque eros sed sem consectetur tincidunt. Curabitur lobortis egestas ullamcorper. Nulla faucibus quam id ultrices molestie.</p>
-			<a href="">View Our Work</a>
+			<span class="sub"><?php echo get_option('service-middle-sub-title'); ?></span><br>
+			<h1><?php echo get_option('service-middle-title'); ?></h1>
+			<p><?php echo get_option('service-middle-body'); ?></p>
+			<a href="<?php echo site_url('portfolio'); ?>">View Our Work</a>
 		</div>
 		<div class="col-6">
 			<img src="<?php echo site_url('assets/static/passenger.png'); ?>" width="100%">
@@ -99,21 +55,34 @@
 		<div class="col-11 text-center">
 			<span class="sub"><?php echo get_option('testimonials-sub-heading'); ?></span><br>
 			<h1><?php echo get_option('testimonials-heading'); ?></h1>
-			<div class="testimonial-slides">
+			<div class="testimonial-slides init-slick-slider"
+				 data-dots="false"
+				 data-infinite="true"
+				 data-speed="1000"
+				 data-autoplay="true"
+				 data-arrows="true"
+				 data-slide="1"
+				 data-toslide="1"
+				 data-usearrowobj="true"
+				 data-prev="#prev-slide"
+				 data-next="#next-slide"
+				 id="testimony-sliders">
+				<?php foreach ($testimonials as $key => $value) { ?>
 				<div class="item">
-					<h3>"Amazing Services"</h3>
-					<p class="half">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit. Curabitur nec aliquam sem. Nam vestibulum accumsan vestibulum. Aenean ipsum sapien, viverra sit amet orci at, semper condimentum nisl. Donec scelerisque eros sed sem consectetur tincidunt. Curabitur lobortis egestas ullamcorper. Nulla faucibus quam id ultrices molestie.</p>
+					<h3>"<?php echo $value['caption']; ?>"</h3>
+					<p class="half"><?php echo $value['testimony']; ?></p>
 					<br><br>
 					<p class="half">
-						<b>Name</b><br>
-						Customer
+						<b><?php echo $value['user_name']; ?></b><br>
+						<?php echo $value['user_type']; ?>
 					</p>
 				</div>
+				<?php } ?>
 			</div>
 			<div class="nav-slide">
 				<button class="nav" id="prev-slide">&larr;</button>
-				<span><b id="counter">01</b> / 10</span>
-				<button class="nav" id="prev-slide">&rarr;</button>
+				<span><b id="counter">1</b> / <?php echo count($testimonials); ?></span>
+				<button class="nav" id="next-slide">&rarr;</button>
 			</div>
 		</div>
 	</div>

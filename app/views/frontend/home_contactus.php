@@ -1,4 +1,4 @@
-<div class="container-fluid cover-area" style="background: url(assets/static/contactusbanner.png);">
+<div class="container-fluid cover-area" style="background: url(assets/static/<?php echo get_option('contactus-cover'); ?>);">
 	<div class="overlay"></div>
 	<div class="row">
 		<div class="col-10 text-left">
@@ -62,30 +62,33 @@
 				<div class="col no-border text-center">
 					<span>Get In Touch</span>
 					<h1 class="center">Leave Comment</h1>
-					<form>
+					<form action="<?php echo site_url('home/contactsubmission/'.$csrf_token); ?>" method="post" class="ajax-form-csrf">
 					  <div class="form-row">
 					    <div class="col">
-					      <input type="text" class="form-control" placeholder="First name">
+					      <input type="text" class="form-control" name="firstname" placeholder="First name">
 					    </div>
 					    <div class="col">
-					      <input type="text" class="form-control" placeholder="Last name">
+					      <input type="text" class="form-control" name="lastname" placeholder="Last name">
 					    </div>
 					    <div class="w-100"><br></div>
 					    <div class="col-12">
-					      <input type="text" class="form-control" placeholder="E-Mail Address">
+					      <input type="text" class="form-control" name="email" placeholder="E-Mail Address">
 					    </div>
 					    <div class="w-100"><br></div>
 					    <div class="col-12">
-					      <textarea class="form-control" placeholder="Your Message" rows="7"></textarea>
+					      <textarea class="form-control" name="message" placeholder="Your Message" rows="7"></textarea>
 					    </div>
 					    <div class="w-100"><br></div>
-					    <div class="col-12"><button class="blue medium">Submit</button></div>
+					    <div class="col-12">
+					    	<button class="blue medium sbt" type="submit">Submit</button>
+					    	<button class="blue medium ldr" type="button" style="display: none"><i class="fa fa-spinner fa-spin"></i></button>
+					    </div>
 					  </div>
 					</form>
 				</div>
 				<div class="col">
 					<div class="map-embed">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.361918811779!2d106.79521931426869!3d-6.21591066261227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f749eaf101f5%3A0xcd62c14b7a08da30!2sGBK%20Arena!5e0!3m2!1sen!2sid!4v1584298082160!5m2!1sen!2sid" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+						<iframe src="<?php echo get_option('embed-map-url'); ?>" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 					</div>
 				</div>
 			</div>

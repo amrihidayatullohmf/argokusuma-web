@@ -25,5 +25,25 @@ class APP_Frontend extends APP_Core {
             ));
 
         $this->_template_master_data['facebook_appid'] = $this->_social_config['facebook']['appId'];
+    
+        $this->_data['latestnews'] = $this->news->get_latest(3);
+        $this->_template_master_data['latestnews'] = $this->_data['latestnews'];
+    }
+
+    public function generate_csrf($name) {
+        $this->session->unset_userdata($name);
+        $csrf_token = sha1(date('U').md5(date($name)));
+        $this->session->set_userdata($name,$csrf_token);
+        return $csrf_token;
+    }
+
+    public function is_match_token($name,$token) {
+        $get = $this->session->userdata($name);
+
+        if($get == FALSE) {
+            return FALSE;
+        }
+
+        return ($get == $token) ? TRUE : FALSE;
     }
 }

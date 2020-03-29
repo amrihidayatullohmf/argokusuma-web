@@ -164,11 +164,11 @@
 			</div>
 		</div>
 		<div class="col-11 clients text-center">
-			<p>Our clients are always satified with the quality of services:</p>
+			<p><?php echo get_option('client-pre-text'); ?></p>
 			<div class="client-logos">
-				<div class="logo"><img src="<?php echo site_url('medias/clients/01.png'); ?>"></div>
-				<div class="logo"><img src="<?php echo site_url('medias/clients/02.png'); ?>"></div>
-				<div class="logo"><img src="<?php echo site_url('medias/clients/03.png'); ?>"></div>
+				<?php foreach ($clients as $key => $value) { ?>
+				<div class="logo"><img src="<?php echo site_url('medias/clients/'.$value['icon']); ?>" alt="<?php echo $value['name']; ?>"></div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -181,27 +181,16 @@
 		</div>
 		<div class="col-11">
 			<div class="teams-box">
+				<?php foreach ($teams as $key => $value) { ?>
 				<div class="team">
-					<img src="<?php echo site_url('medias/teams/teamdummy.png'); ?>">
+					<img src="<?php echo site_url('medias/teams/'.$value['photo']); ?>">
 					<div class="text">
-						<h1>Rendra Setyo AE</h1>
-						<span>Founder &amp; CEO</span>
+						<h1><?php echo $value['name']; ?></h1>
+						<span><?php echo $value['position']; ?></span>
 					</div>
 				</div>
-				<div class="team">
-					<img src="<?php echo site_url('medias/teams/teamdummy.png'); ?>">
-					<div class="text">
-						<h1>Rendra Setyo AE</h1>
-						<span>Founder &amp; CEO</span>
-					</div>
-				</div>
-				<div class="team">
-					<img src="<?php echo site_url('medias/teams/teamdummy.png'); ?>">
-					<div class="text">
-						<h1>Rendra Setyo AE</h1>
-						<span>Founder &amp; CEO</span>
-					</div>
-				</div>
+				<?php } ?>
+	
 			</div>
 		</div>
 		<div class="col-11">
@@ -214,30 +203,16 @@
 		</div>
 		<div class="col-11">
 			<div class="blog-box">
+				<?php foreach ($latestnews['lists'] as $key => $value) { ?>
 				<div class="box">
-					<img src="<?php echo site_url('medias/blogs/blog1.png'); ?>">
+					<img src="<?php echo $value['thumbnail']['path']; ?>">
 					<div class="text">
-						<span>February 21st 2020, 0 Comment</span>
-						<h1>Business</h1>
-						<a href="#">Read More</a>
+						<span><?php echo $value['date_formatted']; ?>, <?php echo $value['total_comment']; ?> Comment</span>
+						<h1><?php echo $value['title']; ?></h1>
+						<a href="<?php echo $value['url']; ?>">Read More</a>
 					</div>
 				</div>
-				<div class="box">
-					<img src="<?php echo site_url('medias/blogs/blog2.png'); ?>">
-					<div class="text">
-						<span>February 21st 2020, 0 Comment</span>
-						<h1>Business</h1>
-						<a href="#">Read More</a>
-					</div>
-				</div>
-				<div class="box">
-					<img src="<?php echo site_url('medias/blogs/blog3.png'); ?>">
-					<div class="text">
-						<span>February 21st 2020, 0 Comment</span>
-						<h1>Business</h1>
-						<a href="#">Read More</a>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 		
@@ -249,10 +224,11 @@
 		<div class="col-12 text-center">
 			<h1><?php echo get_option('newsletter-heading'); ?></h1>
 			<p><?php echo get_option('newsletter-body-before'); ?></p>
-			<form action="" method="post">
+			<form action="<?php echo site_url('home/subscription/'.$csrf_token); ?>" method="post" class="ajax-form-csrf">
 				<div class="input-area">
 					<input type="text" name="email" placeholder="Your email address">
-					<button class="arrow"></button>
+					<button class="arrow sbt" type="submit"></button>
+					<button class="arrow ldr loading" type="button" style="display: none"><i class="fa fa-spinner fa-spin"></i></button>
 				</div>
 			</form>
 			<p><?php echo get_option('newsletter-body-after'); ?></p>

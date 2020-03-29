@@ -9,7 +9,7 @@
             	<div class="row">
             		<div class="col-md-9">
 
-		                <?php render_tab_text('Article Title','title',(!isset($data) ? '' : $data['title']),['type'=>'news','item'=>'title','ref'=>(isset($data) ? $data['id'] : 0)],'',80); ?>
+		                <?php render_tab_text('Article Title','title',(!isset($data) ? '' : $data['title']),['type'=>'news','item'=>'title','ref'=>(isset($data) ? $data['id'] : 0)],'',200); ?>
 		                <?php render_tab_long_text('Article Content','content',(!isset($data) ? '' : $data['content']),['type'=>'news','item'=>'content','ref'=>(isset($data) ? $data['id'] : 0)],'tinymce'); ?>
 		                <!--
 		                <br>

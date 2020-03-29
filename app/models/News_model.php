@@ -72,11 +72,9 @@ class News_model extends CI_Model {
 				$rows[$key]['shortify'] = $this->shortify($value['content_text']);
 			}
 
-			if(isset($options['dateformat']) and !empty($options['dateformat'])) {
-				$rows[$key]['date_formatted'] = date($options['dateformat'],strtotime($value['publish_date']));
-			}
-
-			$rows[$key]['url'] = site_url($this->lang.'/news/'.$value['slug']);
+			$rows[$key]['date_formatted'] = date('F jS Y',strtotime($value['publish_date']));
+			$rows[$key]['url'] = site_url('blog/'.$value['slug']);
+			$rows[$key]['total_comment'] = $this->db->get_where('news_comments',['news_id'=>$news_id,'parent_id'=>0,'is_active !='=>0])->num_rows(); 
 		}
 
 		return $rows;
@@ -115,6 +113,40 @@ class News_model extends CI_Model {
 				.'FROM '.$this->db->dbprefix('news').' n  WHERE '
 				.'n.is_active = 1 AND n.is_pinned = 1 '
 				.'ORDER BY n.created_date DESC ';
+
+		$rows = $this->db->query($query.' LIMIT '.$offset.','.$limit)->result_array();
+		$total = $this->db->query($query)->num_rows();
+		
+		$lists = $this->prepare($rows,[
+									'shortify' => TRUE,
+									'thumbnail' => TRUE
+							  ]);
+
+		$totalpage = ceil($total/$limit);
+		$nextpage = ($page < $totalpage) ? $page+1 : 0;
+
+		return [
+			'lists' => $lists,
+			'nextpage' => $nextpage,
+			'currentpage' => $page
+		];
+	}
+
+	public function get_latest($max = 3,$page = 1) {
+		$offset = 0;
+		$limit = $max;
+
+		if($page > 1) {
+			$offset = ($page - 1) * $limit;
+		}
+
+		$query = 'SELECT n.*, '
+			    .'(SELECT text FROM '.$this->db->dbprefix('langs').' WHERE language = "'.$this->lang.'" AND type = "news" AND item = "title" AND ref_id = n.id) AS title_text, '
+			    .'(SELECT text FROM '.$this->db->dbprefix('langs').' WHERE language = "'.$this->lang.'" AND type = "news" AND item = "tagline" AND ref_id = n.id) AS tagline_text, '
+			    .'(SELECT text FROM '.$this->db->dbprefix('langs').' WHERE language = "'.$this->lang.'" AND type = "news" AND item = "content" AND ref_id = n.id) AS content_text '
+				.'FROM '.$this->db->dbprefix('news').' n  WHERE '
+				.'n.is_active = 1 '
+				.'ORDER BY n.publish_date DESC ';
 
 		$rows = $this->db->query($query.' LIMIT '.$offset.','.$limit)->result_array();
 		$total = $this->db->query($query)->num_rows();
@@ -345,6 +377,81 @@ class News_model extends CI_Model {
 							  ]);
 
 
-		
+	}
+
+	public function get_news_lists($category_slug = 'all', $search = '', $offset, $limit) {
+		$search_query = (!empty($search)) ? ' AND n.title LIKE "%'.$search.'%" ' : '';
+
+		$query = 'SELECT n.*, '
+			    .'(SELECT text FROM '.$this->db->dbprefix('langs').' WHERE language = "'.$this->lang.'" AND type = "news" AND item = "title" AND ref_id = n.id) AS title_text, '
+			    .'(SELECT text FROM '.$this->db->dbprefix('langs').' WHERE language = "'.$this->lang.'" AND type = "news" AND item = "tagline" AND ref_id = n.id) AS tagline_text, '
+			    .'(SELECT text FROM '.$this->db->dbprefix('langs').' WHERE language = "'.$this->lang.'" AND type = "news" AND item = "content" AND ref_id = n.id) AS content_text '
+				.'FROM '.$this->db->dbprefix('news').' n  WHERE '
+				.'n.is_active = 1 '.$search_query.' '
+				.'ORDER BY n.is_pinned ASC, n.created_date DESC ';
+
+		if($category_slug != 'all') {
+			$category = $this->db->get_where('news_categories',['slug'=>$category_slug,'is_active'=>1])->row();
+			
+			if(isset($category->id)) {
+				$query = 'SELECT n.*, '
+					    .'(SELECT text FROM '.$this->db->dbprefix('langs').' WHERE language = "'.$this->lang.'" AND type = "news" AND item = "title" AND ref_id = n.id) AS title_text, '
+					    .'(SELECT text FROM '.$this->db->dbprefix('langs').' WHERE language = "'.$this->lang.'" AND type = "news" AND item = "tagline" AND ref_id = n.id) AS tagline_text, '
+					    .'(SELECT text FROM '.$this->db->dbprefix('langs').' WHERE language = "'.$this->lang.'" AND type = "news" AND item = "content" AND ref_id = n.id) AS content_text '
+						.'FROM '.$this->db->dbprefix('news').' n LEFT JOIN '.$this->db->dbprefix('news_category_relations').' r ON r.news_id = n.id WHERE '
+						.'n.is_active = 1 AND r.category_id = '.$category->id.' '.$search_query.' '
+						.'ORDER BY n.is_pinned ASC, n.created_date DESC ';
+			}
+		}
+
+		$rows = $this->db->query($query.'LIMIT '.$offset.", ".$limit)->result_array();
+		$total = $this->db->query($query)->num_rows();
+
+		$lists = $this->prepare($rows,[
+									'shortify' => TRUE,
+									'thumbnail' => TRUE,
+									'dateformat' => 'Y/m/d'
+							  ]);
+
+		return ['rows'=>$lists,'total'=>$total];
+	}
+
+	public function get_comment($news_id = 0) {
+		$get_all = $this->db->get_where('news_comments',['parent_id'=>0,'news_id'=>$news_id,'is_active'=>1])->result_array();
+
+		foreach ($get_all as $key => $value) {
+			$get_all[$key]['reply'] = $this->db->get_where('news_comments',['parent_id'=>$value['id'],'is_active'=>1])->result_array();
+		}
+
+		return $get_all;
+	}
+
+	public function save_comment($news_id,$name,$email,$website,$comment) {
+		return $this->db->insert('news_comments',[
+									'news_id' => $news_id,
+									'parent_id' => 0,
+									'name' => $name,
+									'email' => $email,
+									'website' => $website,
+									'comment' => $comment,
+									'is_active' => 2,
+									'created_date' => date('Y-m-d H:i:s')
+								]);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

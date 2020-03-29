@@ -197,7 +197,19 @@
                   </li>
               
                   <li class="<?php echo $this->router->class=='settings' && $setting_current=='contact'  ? 'active' : ''; ?>">
-                    <a href="<?php echo site_url('webtools/settings/index/contact'); ?>"><i class="fa fa-circle-o"></i> Contact</a>
+                    <a href="<?php echo site_url('webtools/settings/index/contact'); ?>"><i class="fa fa-circle-o"></i> Contact Us</a>
+                  </li>
+
+                  <li class="<?php echo $this->router->class=='settings' && $setting_current=='about-us'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/settings/index/about-us'); ?>"><i class="fa fa-circle-o"></i> About Us</a>
+                  </li>
+
+                  <li class="<?php echo $this->router->class=='settings' && $setting_current=='services'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/settings/index/services'); ?>"><i class="fa fa-circle-o"></i> Services</a>
+                  </li>
+
+                  <li class="<?php echo $this->router->class=='settings' && $setting_current=='portfolio'  ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('webtools/settings/index/portfolio'); ?>"><i class="fa fa-circle-o"></i> Portofolio</a>
                   </li>
                 </ul>
               </li>

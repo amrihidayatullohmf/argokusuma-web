@@ -11,62 +11,71 @@
 <div class="container-fluid portfolio-container">
 	<div class="row justify-content-md-center">
 		<div class="col-9 blog-detail-area">
+
 		
-			<img src="<?php echo site_url('assets/static/blog-cover.png'); ?>" class="cover">
-			<span class="timestamp">March 27th 2020, 1 Comment</span>
-			<h1 class="title">Lorem Ipsum dolor sit amet</h1>
+			<?php if(!empty($detail['thumbnail_wide']['path'])): ?><img src="<?php echo $detail['thumbnail_wide']['path']; ?>" class="cover"><?php endif; ?>
+			<span class="timestamp"><?php echo $detail['date_formatted']; ?>, <?php echo $detail['total_comment']; ?> Comment</span>
+			<h1 class="title"><?php echo $detail['title']; ?></h1>
 			<div class="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit. Curabitur nec aliquam sem. Nam vestibulum accumsan vestibulum. Aenean ipsum sapien, viverra sit amet orci at, semper condimentum nisl. Donec scelerisque eros sed sem consectetur tincidunt. Curabitur lobortis egestas ullamcorper. Nulla faucibus quam id ultrices molestie.</p>
-				<p>Donec cursus augue et mauris tempor, vestibulum viverra erat pretium. Vestibulum eget felis et elit pretium faucibus. Donec pretium vehicula facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper accumsan odio imperdiet tincidunt. Morbi non semper tellus, eu bibendum lorem. In vitae malesuada est, vitae viverra diam. Nam convallis libero nunc, eget pellentesque ligula pharetra in. Ut faucibus feugiat velit, quis convallis orci imperdiet accumsan. Mauris tempor consectetur nulla eget tincidunt. Vestibulum molestie orci at nulla dictum volutpat. Quisque accumsan imperdiet posuere. Nullam sit amet laoreet magna. Fusce nec placerat metus, eu accumsan ante.</p>
-				<p>Proin tincidunt, est ut volutpat maximus, nibh nibh cursus leo, in feugiat ante felis vel dui. Nulla dictum ligula non magna dignissim, ullamcorper dictum magna consequat. Proin euismod lectus eget erat fermentum ultricies. Curabitur commodo metus sit amet tellus viverra imperdiet. Nullam lacinia pellentesque velit, vel laoreet enim ornare quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus magna lectus, dignissim eu malesuada eget, elementum ut lorem. Nam condimentum turpis sed rhoncus finibus. Proin finibus leo ante, a lobortis tortor dictum eu. Ut suscipit leo sed posuere mattis. Morbi ac dui euismod, tincidunt sem nec, fermentum sem. Morbi eu tortor ullamcorper metus laoreet condimentum a nec dui. Suspendisse potenti. Pellentesque vitae magna porta, condimentum nunc a, placerat ex. Suspendisse potenti.</p>
-				<p>Nam condimentum fringilla magna eget auctor. Aenean suscipit, urna ac luctus semper, nunc ante tincidunt nulla, sed sodales felis ante eget ligula. Sed sodales hendrerit orci tristique tristique. Sed at ex metus. Donec consectetur a tellus blandit consequat. Quisque sollicitudin facilisis magna, sit amet ultrices erat rhoncus eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit. Curabitur nec aliquam sem. Nam vestibulum accumsan vestibulum. Aenean ipsum sapien, viverra sit amet orci at, semper condimentum nisl. Donec scelerisque eros sed sem consectetur tincidunt. Curabitur lobortis egestas ullamcorper. Nulla faucibus quam id ultrices molestie.</p>
-				<p>Donec cursus augue et mauris tempor, vestibulum viverra erat pretium. Vestibulum eget felis et elit pretium faucibus. Donec pretium vehicula facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper accumsan odio imperdiet tincidunt. Morbi non semper tellus, eu bibendum lorem. In vitae malesuada est, vitae viverra diam. Nam convallis libero nunc, eget pellentesque ligula pharetra in. Ut faucibus feugiat velit, quis convallis orci imperdiet accumsan. Mauris tempor consectetur nulla eget tincidunt. Vestibulum molestie orci at nulla dictum volutpat. Quisque accumsan imperdiet posuere. Nullam sit amet laoreet magna. Fusce nec placerat metus, eu accumsan ante.</p>
-				
+				<?php echo $detail['content']; ?>
 			</div>
 
 			<h2>Write a Comment</h2>
 			<div class="comment-form">
-				<form>
+				<form action="<?php echo site_url('blog/savecomment/'.$csrf_token); ?>"  method="post" class="ajax-form-csrf" id="blog-comment">
+				  <input type="hidden" name="news_id" value="<?php echo $detail['id']; ?>">
 				  <div class="form-group">
 				    <label for="exampleInputEmail1">Your email address will not be published. Required field are marked *</label>
-				    <textarea class="form-control" placeholder="Comment*" rows="10"></textarea>
+				    <textarea class="form-control" placeholder="Comment*" rows="10" name="comment"></textarea>
 				  </div>
 				  <div class="row">
 				    <div class="col">
-				      <input type="text" class="form-control" placeholder="Name*">
+				      <input type="text" class="form-control" name="name" placeholder="Name*" id="savename">
 				    </div>
 				    <div class="col">
-				      <input type="text" class="form-control" placeholder="Email*">
+				      <input type="text" class="form-control" name="email" placeholder="Email*" id="saveemail">
 				    </div>
 				    <div class="col">
-				      <input type="text" class="form-control" placeholder="Web">
+				      <input type="text" class="form-control" name="website" placeholder="Web" id="savewebsite">
 				    </div>
 				  </div>
 				  <br>
 				  <div class="form-group form-check">
-				    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-				    <label class="form-check-label" for="exampleCheck1">Save my information in this browser for the future comment</label>
+				    <input type="checkbox" class="form-check-input" id="saveinfocomment">
+				    <label class="form-check-label" for="saveinfocomment">Save my information in this browser for the future comment</label>
 				  </div>
-				  <button type="submit" class="blue">Post Comment</button>
+				  <button type="submit" class="blue sbt">Post Comment</button>
+				  <button type="button" class="blue ldr" style="display: none"><i class="fa fa-spinner fa-spin"></i></button>
 				</form>
 			</div>
 
 			<h2>Comments</h2>
 			<hr>
-			<span class="timestamp">1 Comment</span>
+			<span class="timestamp"><?php echo $detail['total_comment']; ?> Comment</span>
 			<br><br>
+			<?php foreach ($comments as $key => $value) { ?>
 			<div class="comment-item">
-				<h2>Amri Hidayatulloh</h2>
-				<span>March 28th 2020&nbsp;|&nbsp;<i class="fa fa-globe"></i>&nbsp;<a href="">www.amrihidayatulloh.com</a></span>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nunc ac massa malesuada rhoncus ut vel eros. Phasellus vel congue velit. Curabitur nec aliquam sem. Nam vestibulum accumsan vestibulum.</p>
+				<h2><?php echo $value['name']; ?></h2>
+				<span><?php echo date('F jS Y',strtotime($value['created_date'])); ?>&nbsp;|&nbsp;<i class="fa fa-globe"></i>&nbsp;<a href="<?php echo $value['website']; ?>" target="_blank"><?php echo $value['website']; ?></a></span>
+				<p><?php echo $value['comment']; ?></p>
+				<div class="reply-area">
+					<?php foreach ($value['reply'] as $k => $v) { ?>
+					<div class="comment-item" style="border:none;border-left:solid 1px #ccc;background: #f0f0f0;">
+						<h2><?php echo $v['name']; ?></h2>
+						<span><?php echo date('F jS Y',strtotime($v['created_date'])); ?></span>
+						<p><?php echo $v['comment']; ?></p>
+					</div>
+					<?php } ?>
+				</div>
 			</div>
+
+			<?php } ?>
 
 		</div>
 		<div class="col-3 sidebar-blog">
-			<form action="">
+			<form action="<?php echo site_url('blog'); ?>" method="get">
 				<div class="input-group mb-3 search-box">
-				  <input type="text" class="form-control" aria-label="Search" placeholder="Search...">
+				  <input type="text" class="form-control" aria-label="Search" placeholder="Search..." name="query_search">
 				  <div class="input-group-append">
 				    <span class="input-group-text"><i class="fa fa-search"></i></span>
 				  </div>
@@ -78,27 +87,26 @@
 			<hr>
 
 			<ul class="categories">
-				<li><a href="">Business</a></li>
-				<li><a href="">Company</a></li>
-				<li><a href="">Creative</a></li>
-				<li><a href="">Marketing</a></li>
+				<?php foreach ($categories as $key => $value) { ?>
+				<li><a href="<?php echo site_url('blog/index/'.$value['slug']); ?>"><?php echo $value['category']; ?></a></li>
+				<?php } ?>
 			</ul>
 			<br><br>
 
 			<h2>Popular Posts</h2>
 			<hr>
 
-			<?php for($i = 1; $i <= 4; $i++): ?>
-			<a href="<?php echo site_url('blog/branding') ;?>">
+			<?php foreach($latestnews['lists'] as $key => $value): ?>
+			<a href="<?php echo $value['url'] ;?>">
 				<div class="popular-box">
-					<img src="<?php echo site_url('assets/static/portfolio-dummy-'.$i.'.png'); ?>" class="thumb">
+					<img src="<?php echo $value['thumbnail']['path']; ?>" class="thumb">
 					<div class="text-area">
-						<h3>Business</h3>
-						<p>March 27th 2020</p>
+						<h3><?php echo $value['title'] ;?></h3>
+						<p><?php echo $value['date_formatted'] ;?></p>
 					</div>
 				</div>
 			</a>
-			<?php endfor; ?>
+			<?php endforeach; ?>
 
 		</div>
 	</div>

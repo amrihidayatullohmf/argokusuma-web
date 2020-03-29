@@ -901,7 +901,11 @@ footer .wrapper .section-full span {
 	border : none;
 	outline: none;
 	border-radius: 0 20px 20px 0;
+	color: #fff;
 }	
+.newsletter-area .input-area button.loading {
+	background: var(--blue-bg);
+}
 
 .cover-area {
 	width: 100%;
