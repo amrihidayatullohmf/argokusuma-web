@@ -65,34 +65,35 @@
 				</div>
 			</div>
 		</div>
+		<!-- https://www.youtube.com/embed/35XxJMhqP60?rel=0 -->
 		<div class="col-11">
 			<div class="embed-responsive embed-responsive-21by9 desktop">
-			  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/35XxJMhqP60?rel=0" allowfullscreen></iframe>
+			  <iframe class="embed-responsive-item" src="<?php echo get_option('youtube-video-url'); ?>" allowfullscreen></iframe>
 			</div>
 			<div class="embed-responsive embed-responsive-16by9 mobile">
-			  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/35XxJMhqP60?rel=0" allowfullscreen></iframe>
+			  <iframe class="embed-responsive-item" src="<?php echo get_option('youtube-video-url'); ?>" allowfullscreen></iframe>
 			</div>
 		</div>
-		<div class="col-11">
+		<div class="col-11" id="counter-animate-container">
 			<div class="row stat-area">
 				<div class="col text-center">
 					<div class="counter-area">
 						<img src="<?php echo site_url('assets/static/'.get_option('stat-icon-1')); ?>">
-						<span class="counter" data-max="<?php echo get_option('stat-value-1'); ?>"><?php echo get_option('stat-value-1'); ?></span>
+						<span class="counter counter-animate" data-max="<?php echo get_option('stat-value-1'); ?>">0</span>
 					</div>
 					<p><?php echo get_option('stat-label-1'); ?></p>
 				</div>
 				<div class="col text-center">
 					<div class="counter-area">
 						<img src="<?php echo site_url('assets/static/'.get_option('stat-icon-2')); ?>">
-						<span class="counter" data-max="<?php echo get_option('stat-value-2'); ?>"><?php echo get_option('stat-value-1'); ?></span>
+						<span class="counter counter-animate" data-max="<?php echo get_option('stat-value-2'); ?>">0</span>
 					</div>
 					<p><?php echo get_option('stat-label-2'); ?></p>
 				</div>
 				<div class="col text-center">
 					<div class="counter-area">
 						<img src="<?php echo site_url('assets/static/'.get_option('stat-icon-3')); ?>">
-						<span class="counter" data-max="<?php echo get_option('stat-value-3'); ?>"><?php echo get_option('stat-value-1'); ?></span>
+						<span class="counter counter-animate" data-max="<?php echo get_option('stat-value-3'); ?>">0</span>
 					</div>
 					<p><?php echo get_option('stat-label-3'); ?></p>
 				</div>
