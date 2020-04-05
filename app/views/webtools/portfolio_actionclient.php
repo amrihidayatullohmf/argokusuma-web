@@ -8,7 +8,7 @@
 
                   <div class="row">
                     <div class="col-xs-3">
-                      <?php render_uploader('photo',((isset($slide) and !empty($slide->icon)) ? site_url('medias/projects/'.$slide->icon) : ''),'Photo  Team',['100%','220px'],['100px','100px']); ?>
+                      <?php render_uploader('photo',((isset($slide) and !empty($slide->icon)) ? site_url('medias/projects/'.$slide->icon) : ''),'Client Logo',['100%','220px'],['100px','100px']); ?>
                     </div>
                     <div class="col-xs-9">
                       <div class="form-group">
@@ -35,7 +35,7 @@
                   
                 </div>
               	<div class="box-footer">
-                	<button class="btn btn-danger submit-btn-file" data-rel="#ajax-form-file" type="submit">Save Team</button>
+                	<button class="btn btn-danger submit-btn-file" data-rel="#ajax-form-file" type="submit">Save Client</button>
               	</div>
             </form>
           </div>

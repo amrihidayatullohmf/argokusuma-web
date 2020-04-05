@@ -306,14 +306,14 @@ class Portfolio extends APP_Webtools {
 		$this->_addScript($js,'embed');
 		$this->_data['lists'] = $this->db->get_where("portofolio_categories",['is_active'=>1])->result_array();
 
-		$this->_template_master_data['page_title'] = 'Articles';
+		$this->_template_master_data['page_title'] = 'Portfolio';
 		$this->_template_master_data['page_subtitle'] = 'Categories';
 		$this->_addContent($this->_data);
 		$this->_render();
 	}
 
 	public function categoryaction($action = 'add',$id = NULL) {
-		$this->_template_master_data['page_title'] = 'Articles';
+		$this->_template_master_data['page_title'] = 'Portfolio';
 		$this->_template_master_data['page_subtitle'] = 'Manage Category';
 
 		if($id != NULL) {

@@ -58,7 +58,7 @@
          		foreach ($value['children'] as $k => $v) {
          	?>
          	<blockquote class="reply">
-         	  <button class="button-remove trigger-comment-delete " data-target="article" data-id="<?php echo $v['id']; ?>"><i class="fa fa-trash"></i></button>
+         	  <button class="button-remove trigger-comment-delete " data-target="articles" data-id="<?php echo $v['id']; ?>"><i class="fa fa-trash"></i></button>
          	  <strong>Administrator</strong>
 			  <p style="font-size: 14px">
 			  	<?php echo $v['comment']; ?>
@@ -82,7 +82,7 @@
 
 
          	<div class="btn-group button-area" role="group" aria-label="..." style="margin-top: 10px">
-         		<a href="#" class="btn btn-danger btn-md trigger-comment-delete btn-delete" data-target="article" data-id="<?php echo $value['id']; ?>"><i class="fa fa-trash"></i>&nbsp;Delete</a>
+         		<a href="#" class="btn btn-danger btn-md trigger-comment-delete btn-delete" data-target="articles" data-id="<?php echo $value['id']; ?>"><i class="fa fa-trash"></i>&nbsp;Delete</a>
          		<?php if(isset($value['children']) and count($value['children']) == 0) { ?><a href="#" class="btn btn-default btn-md show-reply"><i class="fa fa-comment-o"></i>&nbsp;Reply</a><?php } ?>
          	</div>
           </div>

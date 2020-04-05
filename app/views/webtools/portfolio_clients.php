@@ -5,7 +5,7 @@
             <fieldset>
               	<legend style="padding-bottom:5px">
               		Lists&nbsp;&nbsp;
-              		<a href="<?php echo site_url('webtools/portfolio/actionclient/add'); ?>" class="btn btn-danger btn-sm"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Slider</a>
+              		<a href="<?php echo site_url('webtools/portfolio/actionclient/add'); ?>" class="btn btn-danger btn-sm"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Client</a>
 
               	</legend>
               <div class="table-responsive">

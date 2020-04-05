@@ -306,6 +306,8 @@
     <script src="<?php echo base_url(); ?>assets/libs/jqueryui/jquery-ui.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/libs/jqueryui/jquery-ui-timepicker-addon.js"></script>
 
+    <script src="<?php echo assets_url('libs/tinymce/tinymce.min.js'); ?>"></script>
+
     <script src="<?php echo base_url('assets/js/webtools.js?v='.date('U')) ?>"></script>
 
     <?php echo $scripts; ?>

@@ -323,6 +323,10 @@ $(document).ready(function(){
 		var _btn = $(this);
 		var _rel = $(this).data('rel');
 		var _temp = _btn.html();
+
+		if($('.tinymce').length > 0) {
+    		tinyMCE.triggerSave();
+    	}
 		
 		$(_rel).ajaxForm({
 			beforeSubmit: function(formData,jqForm,options) {
@@ -726,7 +730,7 @@ $(document).ready(function(){
     	var _sbt = _self.find('.submit-btn');
     	var tmp = _sbt.html();
 
-    	if($('.tinymce').size() > 0) {
+    	if($('.tinymce').length > 0) {
     		tinyMCE.triggerSave();
     	}
     	
@@ -825,4 +829,24 @@ $(document).ready(function(){
 		removeMultiImageBox(); 	
 
     });
+
+    tinymce.init({
+	      selector: 'textarea.tinymce',
+	      relative_urls: false,
+	      theme: 'modern',
+	      menubar: false,
+	      height: "800",
+	      plugins: [
+	      			' textcolor',
+	      			'autolink lists link charmap print preview anchor code'
+	      		   ],
+	      toolbar: 'undo redo | bold italic underline blockquote | forecolor backcolor | formatselect | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |  link | code',
+	      image_advtab: true ,       
+	      filemanager_title:'Responsive Filemanager' ,
+		  content_style: "blockquote {background: #f8f8f8;width: 92%;border-left:solid 3px #f0f0f0qaa;padding: 10px 3%;text-align: left;margin:10px 0;}"
+	});
+
+	$(".tinymce-content").click(function(){
+		tinyMCE.triggerSave();
+	});
 });

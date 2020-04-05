@@ -5,7 +5,7 @@
             <fieldset>
               	<legend style="padding-bottom:5px">
               		Lists&nbsp;&nbsp;
-              		<a href="<?php echo site_url('webtools/teams/action/add'); ?>" class="btn btn-danger btn-sm"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Slider</a>
+              		<a href="<?php echo site_url('webtools/teams/action/add'); ?>" class="btn btn-danger btn-sm"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Team</a>
 
               	</legend>
               <div class="table-responsive">
